@@ -1,0 +1,65 @@
+{
+    "services": [
+        {
+            "id": 3,
+            "featured_icon": "/images/graphics design.png",
+            "title": "Graphics Design",
+            "excerpt": "Create content that informs and converts.",
+            "bullets": [
+                "Brand Identity Design",
+                "Social Media Graphics",
+                "Marketing Collateral",
+                "Website Visual Assets",
+                "Print & Digital Materials"
+            ],
+            "button_label": "Learn More",
+            "button_link": ""
+        },
+        {
+            "id": 2,
+            "featured_icon": "/images/seo.png",
+            "title": "Search Engine Optimization",
+            "excerpt": "Get more leads and sales with target ads.",
+            "bullets": [
+                "Keyword Research & Strategy",
+                "On-Page SEO Optimization",
+                "Technical SEO Audits",
+                "Local SEO Optimization",
+                "Performance & Ranking Reports"
+            ],
+            "button_label": "Learn More",
+            "button_link": ""
+        },
+        {
+            "id": 1,
+            "featured_icon": "/images/website development.png",
+            "title": "Website Development",
+            "excerpt": "Improve ranking and drive organic traffic.",
+            "bullets": [
+                "Custom & Responsive Design",
+                "SEO-Friendly Architecture",
+                "Fast Loading Performance",
+                "Secure & Scalable Code",
+                "Conversion-Focused Design"
+            ],
+            "button_label": "Learn More",
+            "button_link": "",
+            "is_best_selling": true
+        },
+        {
+            "id": 0,
+            "featured_icon": "/images/ecommerce.png",
+            "title": "E-Commerce",
+            "excerpt": "Build your brand and engage your audience.",
+            "bullets": [
+                "WooCommerce Setup",
+                "Secure Payment Gateway",
+                "Inventory Management",
+                "Mobile Shopping Experience",
+                "Conversion-Focused Store Design"
+            ],
+            "button_label": "Learn More",
+            "button_link": ""
+        }
+    ]
+}
