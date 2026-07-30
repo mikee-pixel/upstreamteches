@@ -18,8 +18,8 @@ const Aboutpage = () => {
   return (
     <div id="about-us">
       <SectionLayout class_name="hero">
-        <div className="row flex flex-row justify-between items-center gap-10 pt-45">
-          <div className="col1 flex flex-col flex-start gap-5">
+        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-45">
+          <div className="col1 flex flex-col items-center lg:items-start gap-5">
             <h6 className={`preheading-text gradient-text`}>
               Passionate People. Powerful Strategies. Real Results.
             </h6>
@@ -75,7 +75,7 @@ const Aboutpage = () => {
       </SectionLayout>
 
       <SectionLayout class_name={"who-we-are"}>
-        <div className="row flex flex-row justify-between items-center gap-10 pt-35">
+        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35">
           <div className="col col1 flex flex-col flex-start gap-5">
             <h6 className="preheading-text gradient-text">Who We Are</h6>
             <h2>Your Partner in Digital Marketing & Innovation</h2>
@@ -93,7 +93,7 @@ const Aboutpage = () => {
               Content Marketing, Email Marketing, Web Design and Development
             </p>
           </div>
-          <div className="col col2 grid grid-cols-2 gap-20 justify-center">
+          <div className="col col2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-2 gap-20 justify-center">
             <BlurbIconTop
               icon={<UserStar />}
               title={"50+"}
@@ -132,64 +132,9 @@ const Aboutpage = () => {
           </div>
         </div>
         <div className="row row2 pt-20">
-          <div className="col flex flex-row justify-between gap-5">
-            <BlurbIconTop
-              icon={<Rocket />}
-              title={"Our Mission"}
-              content={
-                <p className={"text-content"}>
-                  To provide innovative digital marketing solutions that drive
-                  business growth, leveraging our adaptability, problem-solving
-                  skills, and open communication to meet the ever-changing needs
-                  of our clients.
-                </p>
-              }
-              width={"w-[30%]"}
-            />
-            <BlurbIconTop
-              icon={<Eye />}
-              title={"Our Vision"}
-              content={
-                <p className={"text-content"}>
-                  To be the leading digital marketing agency, recognized for our
-                  creative and effective strategies, strong client
-                  relationships, and commitment to delivering exceptional
-                  results.
-                </p>
-              }
-              width={"w-[30%]"}
-            />
-            <BlurbIconTop
-              icon={<Gem />}
-              title={"Our Values"}
-              content={
-                <ul className="content-list">
-                  <li className="item-content-list flex flex-col">
-                    <p className="text-title">Innovation First</p>
-                    <p>We embrace new ideas and technologies.</p>
-                  </li>
-                  <li className="item-content-list flex flex-col">
-                    <p className="text-title">Client-Centered</p>
-                    <p>Our client's success is our priority.</p>
-                  </li>
-                  <li className="item-content-list flex flex-col">
-                    <p className="text-title">Transparency</p>
-                    <p>We believe in open communication and honesty.</p>
-                  </li>
-                  <li className="item-content-list flex flex-col">
-                    <p className="text-title">Excellence</p>
-                    <p>We are committed to deliverying outstanding results.</p>
-                  </li>
-                </ul>
-              }
-              width={"w-[30%]"}
-            />
-          </div>
-        </div>
-        <div className="row row3 pt-20">
-          <div className="col flex flex-row justify-between gap-5">
+          <div className="col flex flex-col lg:flex-row justify-between max-[1023px]:items-center gap-10 lg:gap-5">
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[30%]">
+              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
                 <div className="blurb-icon-container"><Rocket /></div>
                 <div className="blurb-content-container flex flex-col gap-5">
                   <h3 className="blurb-title">Our Mission</h3>
@@ -205,7 +150,7 @@ const Aboutpage = () => {
               </div>
 
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[30%]">
+              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
                 <div className="blurb-icon-container"><Eye /></div>
                 <div className="blurb-content-container flex flex-col gap-5">
                   <h3 className="blurb-title">Our Vision</h3>
@@ -221,7 +166,7 @@ const Aboutpage = () => {
               </div>
 
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[30%]">
+              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
                 <div className="blurb-icon-container"><Gem /> </div>
                 <div className="blurb-content-container flex flex-col gap-5 items-center">
                   <h3 className="blurb-title">Our Values</h3>
@@ -249,6 +194,22 @@ const Aboutpage = () => {
                   </div>
                 </div>
               </div>
+          </div>
+        </div>
+      </SectionLayout>
+
+      <SectionLayout class_name="marketing-banner">
+        <div className="row flex flex-col sm:flex-row flex-between items-center w-full gap-10 mt-30">
+          <div className="col col1 flex flex-col gap-5">
+            <h6>Boost Your Brand, Drive Sales, and Increase Online Visibility</h6>
+            <h2>Elevate Your Business With Expert Digital Marketing</h2>
+            <PrimaryButton buttonlabel={"Contact Us"} icon={<MoveRight />} />
+          </div>
+          <div className="col col2 flex justify-end">
+            <div className="floating-dot-pattern">
+              <img src="/images/primary color dots pattern.png" alt="primary-color-dots-pattern" />
+            </div>
+            <img src="/images/laptop showing analytics for visit, revenue, and conversation data with bg image.png" alt="laptop showing analytics for visit, revenue, and conversation data with bg image" className="banner-image"/>
           </div>
         </div>
       </SectionLayout>

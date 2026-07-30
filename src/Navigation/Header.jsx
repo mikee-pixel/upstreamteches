@@ -54,10 +54,10 @@ const Header = () => {
         ref={headerMenuRefs}
       >
         <div className="inner-con branding-logo w-[50%] md:w-[20%]">
-          <img
+          <Link to="/"><img
             src="/images/upstreamteches-branding-logo-transparent-bg.png"
             alt="upstream branding logo"
-          />
+          /></Link>
         </div>
         <div className="inner-con main-header-menu-container flex justify-end w-[50%] md:w-[80%]">
           <div className="desktop-header-menu-container flex flex-row gap-10">
@@ -66,7 +66,7 @@ const Header = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="menu-item">
-                <Link to="/">About Us</Link>
+                <Link to="/about-us">About Us</Link>
               </li>
               <li className="menu-item">
                 <Link to="/">Services</Link>

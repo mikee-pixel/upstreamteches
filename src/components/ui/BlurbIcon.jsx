@@ -9,7 +9,7 @@ const BlurbIcon = () => {
     const {data, loading, errorMessage} = useAPIrequest();
     
     useEffect(() => {
-        console.log(errorMessage);
+        // console.log(errorMessage);
     }, [errorMessage]);
 
     

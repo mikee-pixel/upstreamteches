@@ -19,11 +19,11 @@ import {
 
 const Homepage = () => {
   //Static Counter
-  const statisticData = useRef();
+  const statisticData = useRef(null);
   const [successProject, setSuccessProject] = useState(0);
   const [satisfiedClient, setSatisfiedClient] = useState(0);
   const [websiteTraffic, setWebsiteTraffic] = useState(0);
-  const statisticInterval = useRef();
+  const statisticInterval = useRef(null);
 
   //Intersection Observer For Statistic Data
   useEffect(() => {
@@ -46,9 +46,9 @@ const Homepage = () => {
       statisticDataObserver.observe(statisticData.current);
 
       return () => {
-        if (statisticInterval.current)
+        if (statisticData.current)
           statisticDataObserver.unobserve(statisticData.current);
-        statisticDataObserver.disconnect();
+          statisticDataObserver.disconnect();
       };
     }
   }, []);
@@ -76,7 +76,6 @@ const Homepage = () => {
   };
 
   if (successProject >= 7 && satisfiedClient >= 6 && websiteTraffic >= 68) {
-    console.log("All states reached the maximum values");
     clearInterval(statisticInterval.current);
   }
 
