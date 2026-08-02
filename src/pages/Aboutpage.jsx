@@ -2,6 +2,8 @@ import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import SecondaryButton from "../components/ui/SecondaryButton";
 import BlurbIconTop from "../components/ui/BlurbIconTop";
+import useCounter from "../customhooks/useCounter";
+import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 import {
   Rocket,
   MoveRight,
@@ -15,11 +17,30 @@ import {
 } from "lucide-react";
 
 const Aboutpage = () => {
+
+  //Custom Hooks for Counter Function.
+  const {dataElementToObserve: happyClientObserver, value: happyClientValue} = useCounter(20);
+  const {dataElementToObserve: campaignObserver, value: campaignValue} = useCounter(120);
+  const {dataElementToObserve: yearsOfExperienceObserver, value: yearsOfExperienceValue} = useCounter(6);
+  const {dataElementToObserve: clientSatisfactionObserver, value: clientSatisfactionValue} = useCounter(99);
+
+
+  //Custom Hooks for Animation
+  const {targetElement: heroCol1, activeAnimation: heroCol1Animation} = useEntranceAnimation();
+  const {targetElement: heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);
+  const {targetElement: whoWeAreCol1, activeAnimation: whoWeAreCol1Animation} = useEntranceAnimation(100);
+  const {targetElement: whoWeAreCol2, activeAnimation: whoWeAreCol2Animation} = useEntranceAnimation(200);
+  const {targetElement: ourValuesRow1, activeAnimation: ourValuesRow1Animation} = useEntranceAnimation(100);
+  const {targetElement: ourValuesRow2Icon1, activeAnimation: ourValuesRow2Icon1Animation} = useEntranceAnimation(200);
+  const {targetElement: ourValuesRow2Icon2, activeAnimation: ourValuesRow2Icon2Animation} = useEntranceAnimation(300);
+  const {targetElement: ourValuesRow2Icon3, activeAnimation: ourValuesRow2Icon3Animation} = useEntranceAnimation(400);
+  const {targetElement: marketingBanner, activeAnimation: marketingBannerAnimation} = useEntranceAnimation(100);
+
   return (
     <div id="about-us">
       <SectionLayout class_name="hero">
         <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-45">
-          <div className="col1 flex flex-col items-center lg:items-start gap-5">
+          <div className={`col1 flex flex-col items-center lg:items-start gap-5 ${heroCol1Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol1}>
             <h6 className={`preheading-text gradient-text`}>
               Passionate People. Powerful Strategies. Real Results.
             </h6>
@@ -39,7 +60,7 @@ const Aboutpage = () => {
               <SecondaryButton buttonlabel="Contact Us" icon={<MoveRight />} />
             </div>
           </div>
-          <div className="col2 flex flex-col items-center">
+          <div className={`col2 flex flex-col items-center ${heroCol2Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol2}>
             <div className="img-container">
               <div className="dots-pattern-container">
                 <img
@@ -76,7 +97,7 @@ const Aboutpage = () => {
 
       <SectionLayout class_name={"who-we-are"}>
         <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35">
-          <div className="col col1 flex flex-col flex-start gap-5">
+          <div className={`col col1 flex flex-col flex-start gap-5 ${whoWeAreCol1Animation ? 'slide-left--active' : 'slide-left--disabled'}`} ref={whoWeAreCol1}>
             <h6 className="preheading-text gradient-text">Who We Are</h6>
             <h2>Your Partner in Digital Marketing & Innovation</h2>
             <p>
@@ -93,33 +114,41 @@ const Aboutpage = () => {
               Content Marketing, Email Marketing, Web Design and Development
             </p>
           </div>
-          <div className="col col2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-2 gap-20 justify-center">
+          <div className={`col col2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-2 gap-20 justify-center ${whoWeAreCol2Animation ? 'slide-right--active' : 'slide-right--disabled' }`} ref={whoWeAreCol2}>
             <BlurbIconTop
               icon={<UserStar />}
-              title={"50+"}
+              title={happyClientValue}
+              suffix={"+"}
               content={"Happy Client"}
+              ref={happyClientObserver}
             />
             <BlurbIconTop
               icon={<ChartNoAxesCombined />}
-              title={"120+"}
+              title={campaignValue}
+              suffix={"+"}
               content={"Campaigns Delivered"}
+              ref={campaignObserver}
             />
             <BlurbIconTop
               icon={<Trophy />}
-              title={"6+"}
+              title={yearsOfExperienceValue}
+              suffix={"+"}
               content={"Years of Experience"}
+              ref={yearsOfExperienceObserver}
             />
             <BlurbIconTop
               icon={<Award />}
-              title={"98%"}
+              title={clientSatisfactionValue}
+              suffix={"%"}
               content={" Client Satisfaction"}
+              ref={clientSatisfactionObserver}
             />
           </div>
         </div>
       </SectionLayout>
 
       <SectionLayout class_name="our-core-values">
-        <div className="row row1 pt-30 flex justify-center">
+        <div className={`row row1 pt-30 flex justify-center ${ourValuesRow1Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={ourValuesRow1}>
           <div className="col flex flex-col gap-5">
             <h6 className="preheading-text gradient-text">Our Core Values</h6>
             <h2>Pioneering the Next Generation of Digital Marketing</h2>
@@ -134,7 +163,7 @@ const Aboutpage = () => {
         <div className="row row2 pt-20">
           <div className="col flex flex-col lg:flex-row justify-between max-[1023px]:items-center gap-10 lg:gap-5">
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
+              <div className={`blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%] ${ourValuesRow2Icon1Animation ? 'fade-in--active' : 'fade-in--disabled'}`} ref={ourValuesRow2Icon1}>
                 <div className="blurb-icon-container"><Rocket /></div>
                 <div className="blurb-content-container flex flex-col gap-5">
                   <h3 className="blurb-title">Our Mission</h3>
@@ -150,7 +179,7 @@ const Aboutpage = () => {
               </div>
 
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
+              <div className={`blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%] ${ourValuesRow2Icon2Animation ? 'fade-in--active' : 'fade-in--disabled'}`} ref={ourValuesRow2Icon2}>
                 <div className="blurb-icon-container"><Eye /></div>
                 <div className="blurb-content-container flex flex-col gap-5">
                   <h3 className="blurb-title">Our Vision</h3>
@@ -166,7 +195,7 @@ const Aboutpage = () => {
               </div>
 
               {/*Blurb Icon Item */}
-              <div className="blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%]">
+              <div className={`blurb-icon-top flex flex-col items-center gap-5 w-[100%] sm:w-[70%] lg:w-[30%] ${ourValuesRow2Icon3Animation ? 'fade-in--active' : 'fade-in--disabled'}`} ref={ourValuesRow2Icon3}>
                 <div className="blurb-icon-container"><Gem /> </div>
                 <div className="blurb-content-container flex flex-col gap-5 items-center">
                   <h3 className="blurb-title">Our Values</h3>
@@ -199,7 +228,7 @@ const Aboutpage = () => {
       </SectionLayout>
 
       <SectionLayout class_name="marketing-banner">
-        <div className="row flex flex-col sm:flex-row flex-between items-center w-full gap-10 mt-30">
+        <div className={`row flex flex-col sm:flex-row flex-between items-center w-full gap-10 mt-30 ${marketingBannerAnimation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={marketingBanner}>
           <div className="col col1 flex flex-col gap-5">
             <h6>Boost Your Brand, Drive Sales, and Increase Online Visibility</h6>
             <h2>Elevate Your Business With Expert Digital Marketing</h2>

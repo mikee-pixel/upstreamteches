@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react"; 
 
-const useObeserver = () => {
+const useCounter = (maxVal) => {
   const dataElementToObserve = useRef(null);
-  const [initialVal, setInitialVal] = useState(0);
-  const [maxVal, setMaxVal] = useState(null);
+  const [value, setValue] = useState(0);
+  const statisticInterval = useRef(null);
 
 
   //Intersection Observer For Statistic Data
@@ -39,17 +39,14 @@ const useObeserver = () => {
     if (visible) {
 
       //Helper Function: Handle Counter
-      const handleCounter = (initialVal, maxVal) => {
-        if (initialVal < maxVal) return initialVal + 1;
-        return initialVal;
+      const handleCounter = (value, maxVal) => {
+        if (value < maxVal) return value + 1;
+        return value;
       };
 
       //Interval Function
       statisticInterval.current = setInterval(() => {
-        setInitialVal((prev) => handleCounter(prev, maxVal))
-        // setSuccessProject((prev) => handleCounter(prev, 20));
-        // setSatisfiedClient((prev) => handleCounter(prev, 10));
-        // setWebsiteTraffic((prev) => handleCounter(prev, 68));
+        setValue((prev) => handleCounter(prev, maxVal))
       }, 80);
     } else {
       //Clear Interval Statistic Data Is Out Of The Viewport.
@@ -57,13 +54,14 @@ const useObeserver = () => {
     }
   };
 
-  if (initialVal >= maxVal) {
+  if (value >= maxVal) {
     clearInterval(statisticInterval.current);
   }
 
-
-  return {dataElementToObserve, initialVal, maxVal}
+  
+  
+  return {dataElementToObserve, value}
 };
 
-export default useObeserver;
+export default useCounter;
  

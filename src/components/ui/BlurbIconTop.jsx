@@ -1,10 +1,11 @@
-const BlurbIconTop = ({icon, title, content, width}) => {
+const BlurbIconTop = ({icon, title, suffix, content, width, ref}) => {
+     
     return (
-        <div className={`blurb-icon-top flex flex-col items-center gap-5 ${width}`}>
+        <div className={`blurb-icon-top flex flex-col items-center gap-5 ${width}`} ref={ref}>
             <div className="icon-box">
-                {icon}
+                {icon} 
             </div>
-            <h3>{title}</h3>
+            <h3>{title}{suffix}</h3>
             <div className="blurb-icon-content-container">{content}</div>
         </div>
     )
