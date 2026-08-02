@@ -96,7 +96,7 @@ const Aboutpage = () => {
       </SectionLayout>
 
       <SectionLayout class_name={"who-we-are"}>
-        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35">
+        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-55 sm:pt-35">
           <div className={`col col1 flex flex-col flex-start gap-5 ${whoWeAreCol1Animation ? 'slide-left--active' : 'slide-left--disabled'}`} ref={whoWeAreCol1}>
             <h6 className="preheading-text gradient-text">Who We Are</h6>
             <h2>Your Partner in Digital Marketing & Innovation</h2>

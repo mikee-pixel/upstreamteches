@@ -1106,6 +1106,24 @@ button {
   }
 }
 
+@media screen and (max-width: 640px) {
+  #about-us .hero .col2 .growth-driven-container {
+    width: 200px;
+  }
+
+  #about-us .hero .col2 .growth-driven-container {
+    left: initial;
+    bottom: 0%;
+    left: initial;
+    right: 0%;
+    transform: translate(-1%, 70%);
+  }
+
+  #about-us .hero .col2 .growth-driven-container .growth-driven-image-container {
+    height: 65px;
+  }
+}
+
 /*Who We Are*/
 #about-us .who-we-are .col1 {
   width: 60%;
