@@ -1,7 +1,7 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import SecondaryButton from "../components/ui/SecondaryButton";
-import BlurbIcon from "../components/ui/BlurbIcon";
+import ServicesList from "../components/ui/ServicesList";
 import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
 import BlurbIconLeft from "../components/ui/BlurbIconLeft";
 import Carousel from "../components/ui/Carousel";
@@ -16,68 +16,14 @@ import {
   MoveRight,
   ArrowRight,
 } from "lucide-react";
+import useCounter from "../customhooks/useCounter";
 
 const Homepage = () => {
-  //Static Counter
-  const statisticData = useRef(null);
-  const [successProject, setSuccessProject] = useState(0);
-  const [satisfiedClient, setSatisfiedClient] = useState(0);
-  const [websiteTraffic, setWebsiteTraffic] = useState(0);
-  const statisticInterval = useRef(null);
-
-  //Intersection Observer For Statistic Data
-  useEffect(() => {
-    if (statisticData.current) {
-      const statisticDataObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              elementIsVisible(true);
-            } else {
-              elementIsVisible(false);
-            }
-          });
-        },
-        {
-          threshold: 0.5,
-        },
-      );
-
-      statisticDataObserver.observe(statisticData.current);
-
-      return () => {
-        if (statisticData.current)
-          statisticDataObserver.unobserve(statisticData.current);
-          statisticDataObserver.disconnect();
-      };
-    }
-  }, []);
-
-  const elementIsVisible = (visible) => {
-    //Create Interval and Execute Interval to Statistics States.
-    if (visible) {
-
-      //Helper Function: Handle Counter
-      const handleCounter = (initialVal, maxVal) => {
-        if (initialVal < maxVal) return initialVal + 1;
-        return initialVal;
-      };
-
-      //Interval Function
-      statisticInterval.current = setInterval(() => {
-        setSuccessProject((prev) => handleCounter(prev, 20));
-        setSatisfiedClient((prev) => handleCounter(prev, 10));
-        setWebsiteTraffic((prev) => handleCounter(prev, 68));
-      }, 80);
-    } else {
-      //Clear Interval Statistic Data Is Out Of The Viewport.
-      clearInterval(statisticInterval.current);
-    }
-  };
-
-  if (successProject >= 7 && satisfiedClient >= 6 && websiteTraffic >= 68) {
-    clearInterval(statisticInterval.current);
-  }
+  
+  //Custom Hook For Counter Function
+  const {dataElementToObserve: successProjects, value: successProjectValue} = useCounter(20);
+  const {dataElementToObserve: satisfiedClient, value: satisfiedClientValue} = useCounter(10);
+  const {dataElementToObserve: websiteTraffic, value: websiteTrafficValue} = useCounter(68);
 
   //Entrance Animation
   const { targetElement: heroCol1, activeAnimation: heroCol1Animation } = useEntranceAnimation();
@@ -86,7 +32,11 @@ const Homepage = () => {
   const { targetElement: coreServiceRow, activeAnimation: coreServiceAnimation } = useEntranceAnimation(0, 0);
   const { targetElement: quickInfoContainer, activeAnimation: quickInfoAnimation } = useEntranceAnimation();
   const { targetElement: marketingBannerCol1, activeAnimation: marketingBannerCol1Animation } = useEntranceAnimation();
-  const { targetElement: marketingBannerCol2, activeAnimation: marketingBannerCol2Animation } = useEntranceAnimation(300);
+  const { targetElement: marketingBannerCol2, activeAnimation: marketingBannerCol2Animation } = useEntranceAnimation(200);
+
+  useEffect(() => {
+    console.log(heroCol1)
+  }, [heroCol1]);
 
   return (
     <div id="homepage">
@@ -137,7 +87,7 @@ const Homepage = () => {
 
       <SectionLayout class_name="core-services flex-row">
         <div
-          className={`row flex flex-col items-center w-full pt-30 gap-5 ${coreServiceAnimation ? "fade-in--active" : "fade-in--disabled"}`}
+          className={`row flex flex-col items-center w-full pt-30 gap-5 ${coreServiceAnimation ? 'scale-up--active' : 'scale-up--disable'}`}
           ref={coreServiceRow}
         >
           <h6 className="preheading-text gradient-text">Our Core Services</h6>
@@ -149,7 +99,7 @@ const Homepage = () => {
             tailored strategies that transform casual browsers into loyal
             customers, using metrics and analytics to guide every decision.
           </p>
-          < BlurbIcon />
+          < ServicesList />
           <PrimaryButton
             buttonlabel={"Explore More Our Services"}
             icon={<ArrowRight />}
@@ -177,23 +127,23 @@ const Homepage = () => {
             <hr />
             <div
               className="container-statistic-data flex flex-col sm:flex-row justify-center items-center gap-5 xl:gap-10"
-              ref={statisticData}
+              
             >
               <div className="stat-item flex flex-col items-center sm:items-start gap-0">
-                <div className="stat-num flex flex-row items-center gap-2 gradient-text">
-                  {successProject}+
+                <div className="stat-num flex flex-row items-center gap-2 gradient-text" ref={successProjects}>
+                  {successProjectValue}+
                 </div>
                 <p>Success Projects</p>
               </div>
               <div className="stat-item flex flex-col items-center sm:items-start gap-0">
-                <div className="stat-num flex flex-row items-center gap-2 gradient-text">
-                  {satisfiedClient}+
+                <div className="stat-num flex flex-row items-center gap-2 gradient-text" ref={satisfiedClient}>
+                  {satisfiedClientValue}+
                 </div>
                 <p>Satisfied Client</p>
               </div>
               <div className="stat-item flex flex-col items-center sm:items-start gap-0">
-                <div className="stat-num flex flex-row items-center gap-2 gradient-text">
-                  {websiteTraffic}%
+                <div className="stat-num flex flex-row items-center gap-2 gradient-text" ref={websiteTraffic}>
+                  {websiteTrafficValue}%
                 </div>
                 <p>Website Traffic</p>
               </div>
