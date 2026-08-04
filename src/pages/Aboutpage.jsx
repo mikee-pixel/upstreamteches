@@ -30,9 +30,9 @@ const Aboutpage = () => {
   const {targetElement: heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);
   const {targetElement: whoWeAreCol1, activeAnimation: whoWeAreCol1Animation} = useEntranceAnimation(100);
   const {targetElement: whoWeAreCol2, activeAnimation: whoWeAreCol2Animation} = useEntranceAnimation(200);
-  const {targetElement: ourValuesRow1, activeAnimation: ourValuesRow1Animation} = useEntranceAnimation(100);
-  const {targetElement: ourValuesRow2Icon1, activeAnimation: ourValuesRow2Icon1Animation} = useEntranceAnimation(200);
-  const {targetElement: ourValuesRow2Icon2, activeAnimation: ourValuesRow2Icon2Animation} = useEntranceAnimation(300);
+  const {targetElement: ourValuesRow1, activeAnimation: ourValuesRow1Animation} = useEntranceAnimation(200);
+  const {targetElement: ourValuesRow2Icon1, activeAnimation: ourValuesRow2Icon1Animation} = useEntranceAnimation(400);
+  const {targetElement: ourValuesRow2Icon2, activeAnimation: ourValuesRow2Icon2Animation} = useEntranceAnimation(600);
   const {targetElement: ourValuesRow2Icon3, activeAnimation: ourValuesRow2Icon3Animation} = useEntranceAnimation(400);
   const {targetElement: marketingBanner, activeAnimation: marketingBannerAnimation} = useEntranceAnimation(100);
 

@@ -365,6 +365,18 @@ button {
   }
 }
 
+
+/*Partnership Section*/
+.client-logo-carousel .row {
+  background-color: var(--tertiary-color);
+  border-radius: 20px;
+}
+
+.client-logo-carousel h5 {
+  text-align: center;
+  color: var(--color-white);
+}
+
 /*CAROUSEL COMPONENT*/
 .embla__viewport {
   overflow: hidden;
@@ -691,17 +703,6 @@ button {
     width: 100%;
     text-align: center;
   }
-}
-
-/*Partnership Section*/
-#homepage .partnership .row {
-  background-color: var(--tertiary-color);
-  border-radius: 20px;
-}
-
-#homepage .partnership h5 {
-  text-align: center;
-  color: var(--color-white);
 }
 
 /*Core Services*/
@@ -1611,3 +1612,10 @@ button {
     transform: translate(45%, -10%);
   }
 }
+
+/*OUR SERVICES PAGE*/
+#our-services .hero .col1,
+#our-services .hero .col1 {
+  width: 50%;
+}
+

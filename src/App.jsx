@@ -1,5 +1,6 @@
 import Homepage from "./pages/Homepage";
 import Aboutpage from "./pages/Aboutpage";
+import OurServices from "./pages/OurServices";
 import { Routes, Route } from "react-router-dom";
 import MainNavigation from "./Navigation/MainNavigation";
 
@@ -22,6 +23,15 @@ const App = () => {
               <Aboutpage />
             </>
           }/>
+
+        <Route
+          path="/services"
+          element={
+            <>
+              <OurServices />
+            </>
+          }
+        />
       </Route>
     </Routes>
   );

@@ -4,7 +4,6 @@ import SecondaryButton from "../components/ui/SecondaryButton";
 import ServicesList from "../components/ui/ServicesList";
 import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
 import BlurbIconLeft from "../components/ui/BlurbIconLeft";
-import Carousel from "../components/ui/Carousel";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 import useAPIrequest from "../customhooks/useAPIrequest";
 import { useEffect, useRef, useState } from "react";
@@ -17,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import useCounter from "../customhooks/useCounter";
+import ClientLogoCaraousel from "../components/ui/ClientsLogoCarousel";
 
 const Homepage = () => {
   
@@ -75,15 +75,7 @@ const Homepage = () => {
         </div>
       </SectionLayout>
 
-      <SectionLayout class_name="partnership">
-        <div
-          className={`row flex flex-col w-full p-10 mt-10 gap-5 ${partnershipAnimation ? "fade-up--active" : "fade-up--disabled"}`}
-          ref={partnershipTarget}
-        >
-          <h5>Trusted by business across industries</h5>
-          <Carousel />
-        </div>
-      </SectionLayout>
+      <ClientLogoCaraousel />
 
       <SectionLayout class_name="core-services flex-row">
         <div
