@@ -1098,7 +1098,7 @@ p.small-body {
 
 @media screen and (max-width: 1024px) {
   #homepage .marketing-banner .upper-banner .icon-box .btn-container {
-    display: block;
+    display: flex;
   }
 
   #homepage .marketing-banner .upper-banner .col2 {
