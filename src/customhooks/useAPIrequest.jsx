@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 
-const useAPIrequest = () => {
+const useAPIrequest = (url) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
@@ -9,7 +9,7 @@ const useAPIrequest = () => {
     const fetchData = async () => {
       try {
         //initiate fetch request
-        const response = await fetch("http://localhost:8000/services");
+        const response = await fetch(url);
         //check if fetch request is ok. If not then return a error message.
         if (!response.ok) {
           throw new Error(`HTTP request: ${response.status}`);

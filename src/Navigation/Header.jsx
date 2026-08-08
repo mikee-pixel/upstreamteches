@@ -76,12 +76,12 @@ const Header = () => {
               </li>
             </ul>
 
-            <button className="primary-button">
+            <Link to={"tel:+639926414357"} className="btn primary-button">
               <span className="flex flex-row items-center gap-3">
                 <Phone />
                 Get In Touch
               </span>
-            </button>
+            </Link>
           </div>
           <div className="mobile-header-menu-container flex items-center">
             <Menu />

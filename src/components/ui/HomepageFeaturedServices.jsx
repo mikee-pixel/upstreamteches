@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import ServiceCard from "./ServiceCard";
 
 
-const ServicesList = () => {
+const HomepageFeaturedServices = () => {
 
     //List of Services API Request.
-    const {data, loading, errorMessage} = useAPIrequest();
+    const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/services");
 
     return (
         <div className="container-services flex flex-row flex-wrap justify-center align-middle gap-10 lg:gap-5">
@@ -29,4 +29,4 @@ const ServicesList = () => {
     );
 };
 
-export default ServicesList;
+export default HomepageFeaturedServices;

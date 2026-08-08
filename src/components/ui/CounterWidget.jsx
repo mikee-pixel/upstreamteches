@@ -1,9 +1,9 @@
-const BlurbIconTop = ({icon, title, suffix, content, width, ref}) => {
+const CounterWidget = ({icon, title, suffix, content, width, ref}) => {
      
     return (
         <div className={`blurb-icon-top flex flex-col items-center gap-5 ${width}`} ref={ref}>
             <div className="icon-box">
-                {icon} 
+                {icon}
             </div>
             <h3>{title}{suffix}</h3>
             <div className="blurb-icon-content-container">{content}</div>
@@ -11,4 +11,4 @@ const BlurbIconTop = ({icon, title, suffix, content, width, ref}) => {
     )
 }
 
-export default BlurbIconTop;
+export default CounterWidget;

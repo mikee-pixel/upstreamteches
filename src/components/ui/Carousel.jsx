@@ -6,15 +6,6 @@ import { useEffect } from "react";
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({loop: false}, [Autoplay()]);
 
-//   const goToPrev = () => {
-//     console.log("Prev button trigger");
-//     emblaApi?.goToPrev();
-//   }
-//   const goToNext = () => {
-//     console.log("Next button trigger");
-//     emblaApi?.goToNext();
-// }
-
   useEffect(() => {
     if(!emblaApi) return;
     emblaApi.plugins().autoplay?.play();

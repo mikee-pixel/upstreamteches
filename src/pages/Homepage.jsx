@@ -1,7 +1,7 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import SecondaryButton from "../components/ui/SecondaryButton";
-import ServicesList from "../components/ui/ServicesList";
+import HomepageFeaturedServices from "../components/ui/HomepageFeaturedServices";
 import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
 import BlurbIconLeft from "../components/ui/BlurbIconLeft";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
@@ -60,8 +60,13 @@ const Homepage = () => {
               <PrimaryButton
                 buttonlabel="Our Service"
                 icon={<SquareArrowOutUpRight />}
+                link={"/services/"}
               />
-              <SecondaryButton buttonlabel="Talk To Us" icon={<MoveRight />} />
+              <SecondaryButton 
+                buttonlabel="Talk To Us" 
+                icon={<MoveRight />} 
+                link={"/contact-us/"}
+              />
             </div>
           </div>
           <div
@@ -91,10 +96,11 @@ const Homepage = () => {
             tailored strategies that transform casual browsers into loyal
             customers, using metrics and analytics to guide every decision.
           </p>
-          < ServicesList />
+          < HomepageFeaturedServices />
           <PrimaryButton
             buttonlabel={"Explore More Our Services"}
             icon={<ArrowRight />}
+            link={"/services/"}
           />
         </div>
       </SectionLayout>
@@ -175,6 +181,7 @@ const Homepage = () => {
                     <PrimaryLargeButton
                     buttonlabel="Get a Free Consultation"
                     icon={<FilePen />}
+                    link={"/contact-us/"}
                   />
                   </div>
                   
@@ -185,6 +192,7 @@ const Homepage = () => {
               <PrimaryLargeButton
                 buttonlabel="Get a Free Consultation"
                 icon={<FilePen />}
+                link={"/contact-us/"}
               />
             </div>
           </div>

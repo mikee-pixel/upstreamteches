@@ -1,6 +1,8 @@
-const PrimaryLargeButton = ({buttonlabel, icon}) => {
+import {Link} from "react-router-dom";
+
+const PrimaryLargeButton = ({buttonlabel, icon, link}) => {
     return (
-        <button className="primary-button large-button"><span className="flex items-center justify-center gap-2">{buttonlabel} {icon}</span></button>
+        <Link to={link} className="btn primary-button large-button"><span className="flex items-center justify-center gap-2">{buttonlabel} {icon}</span></Link>
     )
 }
 

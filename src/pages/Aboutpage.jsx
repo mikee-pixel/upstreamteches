@@ -1,7 +1,7 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import SecondaryButton from "../components/ui/SecondaryButton";
-import BlurbIconTop from "../components/ui/BlurbIconTop";
+import CounterWidget from "../components/ui/CounterWidget";
 import useCounter from "../customhooks/useCounter";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 import {
@@ -15,6 +15,7 @@ import {
   Eye,
   Gem,
 } from "lucide-react";
+import MarketingBanner from "../components/ui/MarketingBanner";
 
 const Aboutpage = () => {
 
@@ -54,10 +55,15 @@ const Aboutpage = () => {
               className={`container-buttons flex flex-col md:flex-row justify-center lg:justify-start items-center gap-5 md:gap-10`}
             >
               <PrimaryButton
-                buttonlabel="Explore Our Services"
+                buttonlabel={"Explore Our Services"}
                 icon={<Rocket />}
+                link={"/services/"}
               />
-              <SecondaryButton buttonlabel="Contact Us" icon={<MoveRight />} />
+              <SecondaryButton 
+                buttonlabel={"Contact Us"} 
+                icon={<MoveRight />} 
+                link={"/contact-us"}
+              />
             </div>
           </div>
           <div className={`col2 flex flex-col items-center ${heroCol2Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol2}>
@@ -115,28 +121,28 @@ const Aboutpage = () => {
             </p>
           </div>
           <div className={`col col2 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-2 gap-20 justify-center ${whoWeAreCol2Animation ? 'slide-right--active' : 'slide-right--disabled' }`} ref={whoWeAreCol2}>
-            <BlurbIconTop
+            <CounterWidget
               icon={<UserStar />}
               title={happyClientValue}
               suffix={"+"}
               content={"Happy Client"}
               ref={happyClientObserver}
             />
-            <BlurbIconTop
+            <CounterWidget
               icon={<ChartNoAxesCombined />}
               title={campaignValue}
               suffix={"+"}
               content={"Campaigns Delivered"}
               ref={campaignObserver}
             />
-            <BlurbIconTop
+            <CounterWidget
               icon={<Trophy />}
               title={yearsOfExperienceValue}
               suffix={"+"}
               content={"Years of Experience"}
               ref={yearsOfExperienceObserver}
             />
-            <BlurbIconTop
+            <CounterWidget
               icon={<Award />}
               title={clientSatisfactionValue}
               suffix={"%"}
@@ -227,21 +233,13 @@ const Aboutpage = () => {
         </div>
       </SectionLayout>
 
-      <SectionLayout class_name="marketing-banner">
-        <div className={`row flex flex-col sm:flex-row flex-between items-center w-full gap-10 mt-30 ${marketingBannerAnimation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={marketingBanner}>
-          <div className="col col1 flex flex-col gap-5">
-            <h6>Boost Your Brand, Drive Sales, and Increase Online Visibility</h6>
-            <h2>Elevate Your Business With Expert Digital Marketing</h2>
-            <PrimaryButton buttonlabel={"Contact Us"} icon={<MoveRight />} />
-          </div>
-          <div className="col col2 flex justify-end">
-            <div className="floating-dot-pattern">
-              <img src="/images/primary color dots pattern.png" alt="primary-color-dots-pattern" />
-            </div>
-            <img src="/images/laptop showing analytics for visit, revenue, and conversation data with bg image.png" alt="laptop showing analytics for visit, revenue, and conversation data with bg image" className="banner-image"/>
-          </div>
-        </div>
-      </SectionLayout>
+      <MarketingBanner 
+        pre_heading={"Boost Your Brand, Drive Sales, and Increase Online Visibility"}
+        title={"Elevate Your Business With Expert Digital Marketing"}
+        sub_heading={"Elevate Your Business With Expert Digital Marketing"}
+        button_label={"Contact Us"}
+        button_link={"/contact-us/"}
+      />
     </div>
   );
 };
