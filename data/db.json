@@ -61,5 +61,48 @@
             "button_label": "Learn More",
             "button_link": ""
         }
+    ],
+
+    "faq": [
+        {
+            "id": 7,
+            "question": "Do you provide SEO services for small businesses?",
+            "answer": "Yes. Our SEO services are designed to help businesses improve their visibility in search engines and attract more relevant organic traffic. Depending on your needs, our approach may include keyword research, on-page optimization, technical SEO, content optimization, local SEO, performance monitoring, and ongoing strategy improvements."
+        },
+        {
+            "id": 6,
+            "question": "Do you offer website design and development?",
+            "answer": "Yes. We design and develop modern, responsive websites that are built around your brand, business objectives, and target audience. We focus on creating websites that are easy to navigate, optimized for performance, mobile-friendly, and structured to support both search visibility and conversions."
+        },
+        {
+            "id": 5,
+            "question": "Do you offer a consultation before starting a project?",
+            "answer": "Yes. We encourage businesses to discuss their goals with us before starting a project. During an initial consultation, we can learn about your business, understand your challenges, discuss your objectives, and determine which digital marketing solutions may provide the most value. From there, we can recommend a strategy tailored to your needs."
+        },
+        {
+            "id": 4,
+            "question": "Can UpstreamTeches help increase traffic to my website?",
+            "answer": "Yes. We can help increase relevant website traffic through a combination of SEO, content marketing, PPC advertising, social media marketing, and website optimization. Rather than focusing only on traffic volume, our goal is to attract visitors who are more likely to engage with your business, become leads, and eventually become customers."
+        },
+        {
+            "id": 3,
+            "question": "How long does it take to see results from digital marketing?",
+            "answer": "The timeframe varies depending on the services and strategies involved. SEO and content marketing generally require consistent effort over time, while PPC advertising can generate targeted traffic more quickly. Website improvements, social media marketing, and other strategies may also produce results at different stages. We focus on measurable progress and continuously refine strategies based on performance data."
+        },
+        {
+            "id": 2,
+            "question": "How do I know which digital marketing service my business needs?",
+            "answer": "The right digital marketing strategy depends on your business goals, target audience, industry, website, competition, and current online presence. We can evaluate your needs and recommend a tailored strategy based on whether you want to increase website traffic, generate leads, improve search rankings, increase online visibility, or drive more sales."
+        },
+        {
+            "id": 1,
+            "question": "What digital marketing services does UpstreamTeches offer?",
+            "answer": "UpstreamTeches provides a range of digital marketing services designed to help businesses grow online. Our services include Search Engine Optimization (SEO), PPC advertising, social media marketing, content marketing, email marketing, website design and development, e-commerce solutions, and conversion-focused digital strategies."
+        },
+        {
+            "id": 0,
+            "question": "How can digital marketing help my small business?",
+            "answer": "Digital marketing can help your small business build a stronger online presence, reach your target audience, generate qualified website traffic, and turn visitors into customers. At UpstreamTeches, we combine strategies such as SEO, website development, content marketing, social media marketing, and paid advertising to create solutions aligned with your business goals."
+        }
     ]
 }

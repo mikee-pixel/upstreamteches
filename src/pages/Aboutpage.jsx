@@ -236,9 +236,11 @@ const Aboutpage = () => {
       <MarketingBanner 
         pre_heading={"Boost Your Brand, Drive Sales, and Increase Online Visibility"}
         title={"Elevate Your Business With Expert Digital Marketing"}
-        sub_heading={"Elevate Your Business With Expert Digital Marketing"}
+        sub_heading={"Partner with Upstream Teches and take your brand to the next level with powerful digital marketing strategies that deliver results."}
         button_label={"Contact Us"}
         button_link={"/contact-us/"}
+        image={"/images/laptop showing analytics for visit, revenue, and conversation data with bg image.png"}
+        alt_image={"laptop showing analytics for visit, revenue, and conversation data with bg image"}
       />
     </div>
   );

@@ -145,6 +145,8 @@ const OurServices = () => {
         sub_heading={"Partner with Upstream Teches and take your brand to the next level with powerful digital marketing strategies that deliver results."} 
         button_label={"Get a Free Consultation"} 
         button_link={"/contact-us/"}
+        image={"/images/A laptop with a rocket launching from its screen, symbolizing innovation and technology with bg image.png"}
+        alt={"A laptop with a rocket launching from its screen, symbolizing innovation and technology with bg image"}
       />
       
     </div>

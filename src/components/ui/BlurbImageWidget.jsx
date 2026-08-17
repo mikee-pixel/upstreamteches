@@ -6,14 +6,13 @@ import {useRef} from "react";
 const BlurbImageWidget = ({id, is_icon_type_img, featured_icon, title, excerpt, has_btn, button_link, button_label}) => {  
 
   const {targetElement, activeAnimation} = useEntranceAnimation(200*id);
-  console.log(id);
 
   return (
     <div className={`blurb-item grid gap-4 p-5 ${activeAnimation ? 'fade-in--active' : 'fade-in--disabled'}`} ref={targetElement}>
       <div className="blurb-image-container">
         {is_icon_type_img ? <img src={featured_icon} alt="" /> : featured_icon}
       </div>
-      <div className="blur-title-container">
+      <div className="blurb-title-container">
         {title}
       </div>
       <div className="blurb-content-container">
