@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import { CirclePlus, CircleMinus } from "lucide-react";
 
 const FAQWidget = () => {
-    const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/faq");
+    // const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/faq");
+    const {data, loading, errorMessage} = useAPIrequest("http://localhost:3000/faq");
     const [faqSelected, setFaqSelected] = useState(null);
 
 

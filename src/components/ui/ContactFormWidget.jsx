@@ -5,8 +5,11 @@ import { useRef, useState } from "react";
 const ContactFormWidget = ({title, subheading, display_in}) => {
     const form = useRef();
     const [submissionStatus, setSubmissionStatus] = useState(null);
-    const [hideMessageResponse, setHideMessageResponse] = useState(null);
     const timeOutResponse = useRef();
+    const [fullNameInput, setFullNameInput] = useState("");
+    const [emailInput, setEmailInput] = useState("");
+    const [telInput, setTelInput] = useState("");
+    const [messageInput, setMessageInput] = useState("");
     
     const sendEmail = (e) => {
         e.preventDefault();
@@ -17,28 +20,29 @@ const ContactFormWidget = ({title, subheading, display_in}) => {
             })
             .then(
                 () => {
-                console.log('SUCCESS!');
+                    console.log('SUCCESS!');
                     setSubmissionStatus(true);
-                    timeOutResponse.current = setTimeout(() => {
-                        setSubmissionStatus(null)
-                    }, 3000);
+                    //Hide the response
+                    hideFormResponse();
+                    //Empty input fields
+                    setFullNameInput("");
+                    setEmailInput("");
+                    setTelInput("");
+                    setMessageInput("");
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
                     setSubmissionStatus(false);
-                    timeOutResponse.current = setTimeout(() => {
-                        setSubmissionStatus(null);
-                    }, [3000])
+                    hideFormResponse();
                 },
             );
     };
 
-    useState(() => {
+    const hideFormResponse = () => {
         timeOutResponse.current = setTimeout(() => {
-            setSubmissionStatus(null)
-        }, 5000);
-    }, [submissionStatus])
-
+            setSubmissionStatus(null);
+        }, [3000])
+    }
 
     return (
         <div className={`contact-form-container ${display_in} flex flex-col gap-5 p-10`}>
@@ -49,19 +53,19 @@ const ContactFormWidget = ({title, subheading, display_in}) => {
                     <div className="field-icon">
                         <SquareUser />
                     </div>
-                    <input className="input-field w-full" type="text" name="full-name" id="full_name" placeholder="Full Name" required/>
+                    <input className="input-field w-full" type="text" name="full-name" id="full_name" placeholder="Full Name" value={fullNameInput} required onChange={(e) => setFullNameInput(e.target.value)}/>
                 </div>
                 <div className="input-field-container flex flex-row w-full sm:w-[47%]">
                     <div className="field-icon">
                         <Mail />
                     </div>
-                    <input className="input-field w-full" type="email" name="email-address" id="email_address" placeholder="Email Address" required/>
+                    <input className="input-field w-full" type="email" name="email-address" id="email_address" placeholder="Email Address" required value={emailInput} onChange={(e) => setEmailInput(e.target.value)}/>
                 </div>
                 <div className="input-field-container flex flex-row w-full sm:w-[47%]">
                     <div className="field-icon">
                         <Phone />
                     </div>
-                    <input className="input-field w-full" type="text" name="phone-number" id="phone_number" placeholder="Phone Number"/>
+                    <input className="input-field w-full" type="text" name="phone-number" id="phone_number" placeholder="Phone Number" value={telInput} onChange={(e) => setTelInput(e.target.value)}/>
                 </div>
                 <div className="input-field-container flex flex-row w-full sm:w-[47%]">
                     <div className="field-icon">
@@ -78,7 +82,7 @@ const ContactFormWidget = ({title, subheading, display_in}) => {
                     <div className="field-icon">
                         <MessageSquare />
                     </div>
-                    <textarea className="input-text-area w-full" name="message" id="your-message" placeholder="Your Message" required></textarea>
+                    <textarea className="input-text-area w-full" name="message" id="your-message" placeholder="Your Message" required value={messageInput} onChange={(e) => setMessageInput(e.target.value)}></textarea>
                 </div>
                 <button className="btn primary-button"><span className="flex items-center justify-center gap-2">Send Message <MoveRight /></span></button>
                 <div className="form-message-response-container w-full">

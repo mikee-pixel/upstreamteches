@@ -7,7 +7,11 @@ import ServiceCard from "./ServiceCard";
 const HomepageFeaturedServices = () => {
 
     //List of Services API Request.
-    const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/services");
+    // const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/services");
+
+    //API Request from Express JS.
+    const {data, loading, errorMessage} = useAPIrequest("http://localhost:3000/services");
+    console.log(data);
 
     return (
         <div className="container-services flex flex-row flex-wrap justify-center align-middle gap-10 lg:gap-5">
