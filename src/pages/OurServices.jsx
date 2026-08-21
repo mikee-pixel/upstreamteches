@@ -14,7 +14,7 @@ import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 const OurServices = () => {
 
   //Service API Request
-  const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/services");
+  const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/services");
 
   const {targetElement: heroCol1, activeAnimation: heroCol1Animation} = useEntranceAnimation();
   const {targetElement: heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);

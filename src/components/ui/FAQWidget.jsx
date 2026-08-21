@@ -4,7 +4,7 @@ import { CirclePlus, CircleMinus } from "lucide-react";
 
 const FAQWidget = () => {
     // const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/faq");
-    const {data, loading, errorMessage} = useAPIrequest("http://localhost:3000/faq");
+    const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/faq");
     const [faqSelected, setFaqSelected] = useState(null);
 
 
