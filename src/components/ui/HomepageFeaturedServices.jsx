@@ -6,11 +6,8 @@ import ServiceCard from "./ServiceCard";
 
 const HomepageFeaturedServices = () => {
 
-    //List of Services API Request.
-    // const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/services");
-
     //API Request from Express JS.
-    const {data, loading, errorMessage} = useAPIrequest("http://localhost:3000/services");
+    const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/services");
     console.log(data);
 
     return (
