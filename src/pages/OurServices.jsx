@@ -102,6 +102,7 @@ const OurServices = () => {
           </div>
           <div className="col col2 flex flex-row flex-wrap gap-5">
             <BlurbImageWidget 
+              id={0}
               is_icon_type_img={false}
               featured_icon={<Trophy />}
               // title={"Data-Driven Strategies"} 
@@ -109,6 +110,7 @@ const OurServices = () => {
               excerpt={"We base every decision on real data and insights to deliver measurable results."}
             />
             <BlurbImageWidget 
+              id={1}
               is_icon_type_img={false}
               featured_icon={<PieChart />}
               // title={"Experience Team"} 
@@ -116,6 +118,7 @@ const OurServices = () => {
               excerpt={"Our team of experts brings years of experience across industries and platform."}
             />
             <BlurbImageWidget 
+              id={2}
               is_icon_type_img={false}
               featured_icon={<Puzzle />}
               // title={"Customized Solutions"} 
@@ -123,6 +126,7 @@ const OurServices = () => {
               excerpt={"We tailor our strategies to fit your business goals, audience, and industry."}
             />
             <BlurbImageWidget 
+              id={3}
               is_icon_type_img={false}
               featured_icon={<HeartHandshake />}
               // title={"24/7 Premium Reporting"} 

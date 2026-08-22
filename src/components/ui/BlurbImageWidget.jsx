@@ -1,7 +1,6 @@
 import { MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import useEntranceAnimation from "../../customhooks/useEntranceAnimation";
-import {useRef} from "react"; 
 
 const BlurbImageWidget = ({id, is_icon_type_img, featured_icon, title, excerpt, has_btn, button_link, button_label}) => {  
 

@@ -13,6 +13,9 @@ import { Link } from "react-router-dom";
 const ContactUs = () => {
     const {targetElement: heroCol1, activeAnimation: heroCol1Animation} = useEntranceAnimation();
     const {targetElement: heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);
+    const {targetElement: contactForm, activeAnimation: contactFormAnimation} = useEntranceAnimation(300);
+    const {targetElement: workWithUsCol1, activeAnimation: workWithUsCol1Animation} = useEntranceAnimation();
+    const {targetElement: faqRow, activeAnimation: faqRowAnimation} = useEntranceAnimation();
     return (
         <div id="contact-us">
             <SectionLayout class_name="hero">
@@ -30,8 +33,8 @@ const ContactUs = () => {
                         <div className="img-container">
                             <img
                                 className="hero-banner-image"
-                                src="/images/A group of diverse business professionals gathered around a laptop.png"
-                                alt="A group of diverse business professionals gathered around a laptop"
+                                src="/images/A group of business professionals collaborating around a table.png"
+                                alt="A group of business professionals collaborating around a table"
                             />
                         </div>
                     </div>
@@ -51,6 +54,7 @@ const ContactUs = () => {
                         <div className="contact-details-container flex flex-col gap-5 pt-5 lg:pt-0">
                             <h6>Contact us here:</h6>
                             <BlurbImageWidget 
+                                id={0}
                                 is_icon_type_img={false}
                                 featured_icon={<Mail />}
                                 title={<h6>Email</h6>}
@@ -58,6 +62,7 @@ const ContactUs = () => {
                                 has_btn={false}
                             />
                             <BlurbImageWidget 
+                                id={1}
                                 is_icon_type_img={false}
                                 featured_icon={<Phone />}
                                 title={<h6>Phone Number</h6>}
@@ -65,6 +70,7 @@ const ContactUs = () => {
                                 has_btn={false}
                             />
                             <BlurbImageWidget 
+                                id={2}
                                 is_icon_type_img={false}
                                 featured_icon={<MapPin />}
                                 title={<h6>Address</h6>}
@@ -81,7 +87,7 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col col2 hidden lg:flex flex-col items-start gap-5 p-10">
+                    <div className={`col col2 hidden lg:flex flex-col items-start gap-5 p-10 ${contactFormAnimation ? 'slide-right--active' : 'slide-right--disabled'}`} ref={contactForm}>
                         <ContactFormWidget 
                             title={"Send Us a Message"}
                             subheading={"Fill out the form below and we'll get back to you as soon as possible."} 
@@ -93,12 +99,13 @@ const ContactUs = () => {
 
             <SectionLayout class_name={"work-with-us"}>
                 <div className="row flex flex-col md:flex-row justify-between align-middle gap-5 py-10 px-0 xl:px-10">
-                    <div className="col col1 flex flex-col gap-5 w-full md:w-[30%]">
+                    <div className={`col col1 flex flex-col gap-5 w-full md:w-[30%] ${workWithUsCol1Animation ? 'slide-left--active' : 'slide-left--disabled'}`} ref={workWithUsCol1}>
                         <h6 className="preheading-text gradient-text text-center md:text-left">Why Work With Us</h6>
                         <h3 className="title text-center md:text-left">We're More Than Just A Service Provider</h3>
                     </div>
                     <div className="col col2 flex flex-col sm:flex-row flex-wrap xl:flex-nowrap sm:justify-center md:justify-between gap-2 w-full md:w-[70%]">
                         <BlurbImageWidget 
+                            id={0}
                             is_icon_type_img={true}
                             featured_icon={"/images/fast response icon.png"} 
                             title={<h6>Fast Response</h6>} 
@@ -106,6 +113,7 @@ const ContactUs = () => {
                             has_btn={false}
                         />
                         <BlurbImageWidget 
+                            id={1}
                             is_icon_type_img={true}
                             featured_icon={"/images/tailored solutions icon.png"} 
                             title={<h6>Tailored Solutions</h6>} 
@@ -113,6 +121,7 @@ const ContactUs = () => {
                             has_btn={false}
                         />
                         <BlurbImageWidget 
+                            id={2}
                             is_icon_type_img={true}
                             featured_icon={"/images/result oriented icon.png"} 
                             title={<h6>Result-Oriented</h6>} 
@@ -120,6 +129,7 @@ const ContactUs = () => {
                             has_btn={false}
                         />
                         <BlurbImageWidget 
+                            id={3}
                             is_icon_type_img={true}
                             featured_icon={"/images/client first icon.png"} 
                             title={<h6>Client First</h6>} 
@@ -142,7 +152,7 @@ const ContactUs = () => {
             />
 
             <SectionLayout class_name={"faq"}>
-                <div className="row flex items-center mt-30 w-full">
+                <div className={`row flex items-center mt-30 w-full ${faqRowAnimation ? 'slide-up--active' : 'slide-up--disabled'}`} ref={faqRow}>
                     <div className="col flex flex-col items-center justify-center gap-5 w-full">
                         <h6 className="preheading-text gradient-text text-center">Frequently Asked Questions</h6>
                         <h2 className="title text-center">Got Questions? We've Got Answer.</h2>
