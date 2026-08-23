@@ -1,6 +1,6 @@
 import SectionLayout from "../components/sections/SectionLayout";
-import { Link } from "react-router-dom";
-import { Phone, Menu } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
+import { Phone, Menu, House, Info, BriefcaseBusiness, Send, CircleX, Mail, PhoneCall, CircleArrowRight} from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 
@@ -9,25 +9,24 @@ const Header = () => {
   const headerMenu = useRef();
   const [stickyHeader, setStickyHeader] = useState(false);
   const prevTopScroll = useRef(0);
+  const [menuSlideOutStatus, setMenuSlideOutStatus] = useState(false);
+  const mobileMenu = useRef(null);
   
   //Sticky Header Navigation
   useEffect(() => {
     if(!headerMenu.current) return;
 
     const handleScroll = () => {
-      // console.log("Scroll Event Listener Trigger!");
+
       const currentTopScroll = window.scrollY;
 
-      // console.log(`Current Top Scroll: ${currentTopScroll} | Previous Top Scroll: ${prevTopScroll.current}`);
       if (currentTopScroll === 0) {
         setStickyHeader(false);
       }
       else if(currentTopScroll > prevTopScroll.current) {
-        setStickyHeader(false);
-        // console.log("Sticky Header set to FALSE");
+        setStickyHeader(false);;
       } else  {
         setStickyHeader(true);
-        // console.log("Sticky Header set TRUE");
       }
 
       prevTopScroll.current = currentTopScroll;
@@ -47,6 +46,17 @@ const Header = () => {
     headerMenuElement.current = element;
   }
 
+  //Close SlideOut When User Clicks Outside Modal
+  useEffect(() => {
+    if(!mobileMenu) return;
+
+    document.addEventListener("click", (e) => {
+      if(!mobileMenu.current.contains(e.target)) {
+        setMenuSlideOutStatus(false);
+        console.log("User Clicks Outside Modal");
+      }
+    })
+  }, [])
   return (
     <SectionLayout class_name={`header-menu ${stickyHeader ? "sticky--active" : ""}`}>
       <div
@@ -84,10 +94,49 @@ const Header = () => {
             </Link>
           </div>
           <div className="mobile-header-menu-container flex items-center">
-            <Menu />
+            <Menu onClick={() => setMenuSlideOutStatus(true)}/>
           </div>
         </div>
       </div>
+      {/* Mobile Menu */}
+      <div className={`mobile-menu-container flex flex-col px-5 py-10 ${menuSlideOutStatus ? 'active' : ''}`} ref={mobileMenu}>
+            <div className="row1 flex flex-row justify-between">
+                <img src="../images/upstream logo mobile menu.png" alt="upstream logo mobile menu" className="branding-logo-mobile-menu w-[40%]"/>
+                <button type="button" onClick={() => setMenuSlideOutStatus(false)}><CircleX size={30}/></button>
+            </div>
+            <div className="row2 pt-5">
+                <div className="main-menu-mobile">
+                    <ul className="flex flex-col">
+                        <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)} ><NavLink to="/" className="flex flex-row align-middle"><House/> Home</NavLink></li>
+                        <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)} ><NavLink to="/about-us/" className="flex flex-row align-middle"><Info/> About Us</NavLink></li>
+                        <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)} ><NavLink to="/services/" className="flex flex-row align-middle"><BriefcaseBusiness/> Services</NavLink></li>
+                        <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)} ><NavLink to="/contact-us/" className="flex flex-row align-middle"><Send/> Contact Us</NavLink></li>
+                    </ul>
+                </div>
+                <div className="lets-talk-container">
+                    <a href="tel:+639926414357" className="flex flex-row items-center p-5 gap-6">
+                        <div className="phone-icon-container">
+                            <PhoneCall size={25}/>
+                        </div>
+                        <div className="text-content flex flex-col gap-2">
+                            <h5>Lets Talk</h5>
+                            <p>Get a free consultation for your business.</p>
+                        </div>
+                        <CircleArrowRight size={50} className="circleArrowRightIcon" />
+                    </a>
+                </div>
+            </div>
+            <div className="row3 pt-10 flex flex-col gap-5">
+                <hr />
+                <h5>Get In Touch</h5>
+                <div className="contact-details-container">
+                    <ul className="flex flex-col gap-2">
+                        <li><a href="mailto:michaelnavidad36@gmail.com"><p className="flex flex-row items-center gap-5 "><Mail />michaelnavidad36@gmail.com</p></a></li>
+                        <li><a href="maps.app.goo.gl/bdZ7T3caRjAhVsuk7" target="_blank"><p className="flex flex-row items-center gap-5 "><Phone /> Bacoor, Cavite, 4102</p></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </SectionLayout>
   );
 };

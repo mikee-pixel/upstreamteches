@@ -8,7 +8,6 @@ const HomepageFeaturedServices = () => {
 
     //API Request from Express JS.
     const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/services");
-    console.log(data);
 
     return (
         <div className="container-services flex flex-row flex-wrap justify-center align-middle gap-10 lg:gap-5">

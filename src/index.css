@@ -827,6 +827,7 @@ input:-webkit-autofill:active {
   height: auto;
 }
 
+/*Desktop Header Menu*/
 .header-menu .desktop-header-menu-container ul li a {
   font-weight: 600;
   font-family: var(--text-font-style);
@@ -878,6 +879,129 @@ input:-webkit-autofill:active {
 
   .header-menu .mobile-header-menu-container {
     display: flex;
+    position: relative;
+  }
+}
+
+/*Mobile Header Menu*/
+.mobile-menu-container {
+  display: none;
+
+  position: fixed;
+  top: 0%;
+  right: 0;
+  transform: translate(200%, 0%);
+  width: 60%;
+  height: 100vh;
+  background-color: var(--heading-text);
+  z-index: 10;
+  border-radius: 0px 0 0 100px;
+  /* inset: 0; */
+
+  transition: transform 1s ease-in-out;
+}
+
+.mobile-menu-container.active {
+  transform: translate(0%, 0%);
+}
+
+.mobile-menu-container .row1 svg {
+  stroke: var(--primary-color);
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item {
+  position: relative;
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item a {
+  
+  color: var(--color-white);
+  font-size: 20px;
+  font-family: var(--heading-font-style);
+  padding: 25px 20px;
+  border-radius: 10px;
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item a.active {
+  background-image: linear-gradient(to right, var(--primary-color), rgba(46, 175, 157, 0.3));
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(46, 175, 157, 0.2);
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item svg {
+  margin-right: 20px;
+}
+
+.mobile-menu-container .row2 .lets-talk-container {
+  margin-top: 30px;;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.mobile-menu-container .row2 .lets-talk-container .phone-icon-container {
+  position: relative;
+}
+
+.mobile-menu-container .row2 .lets-talk-container .phone-icon-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  z-index: 0;
+} 
+
+.mobile-menu-container .row2 .lets-talk-container .phone-icon-container svg {
+  position: relative;
+  stroke: var(--color-white);
+}
+
+.mobile-menu-container .row2 .lets-talk-container h5 {
+  color: var(--primary-color);
+}
+
+.mobile-menu-container .row2 .lets-talk-container p {
+  color: var(--color-white);
+}
+
+.mobile-menu-container .row2 .lets-talk-container .circleArrowRightIcon {
+  stroke: var(--primary-color);
+}
+.mobile-menu-container .row3 hr {
+  background-color: rgba(46, 175, 157, 0.7);
+}
+
+.mobile-menu-container .row3 h5 {
+  color: var(--primary-color);
+}
+
+.mobile-menu-container .row3 .contact-details-container p {
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .mobile-menu-container {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mobile-menu-container {
+    width: 100%;
+    border-radius: 0px 0 0 0px;
   }
 }
 

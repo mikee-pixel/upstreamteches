@@ -34,10 +34,6 @@ const Homepage = () => {
   const { targetElement: marketingBannerCol1, activeAnimation: marketingBannerCol1Animation } = useEntranceAnimation();
   const { targetElement: marketingBannerCol2, activeAnimation: marketingBannerCol2Animation } = useEntranceAnimation(200);
 
-  useEffect(() => {
-    console.log(heroCol1)
-  }, [heroCol1]);
-
   return (
     <div id="homepage">
       <SectionLayout class_name="hero">
