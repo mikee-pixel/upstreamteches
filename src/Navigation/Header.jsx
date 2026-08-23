@@ -47,16 +47,7 @@ const Header = () => {
   }
 
   //Close SlideOut When User Clicks Outside Modal
-  useEffect(() => {
-    if(!mobileMenu) return;
 
-    document.addEventListener("click", (e) => {
-      if(!mobileMenu.current.contains(e.target)) {
-        setMenuSlideOutStatus(false);
-        console.log("User Clicks Outside Modal");
-      }
-    })
-  }, [])
   return (
     <SectionLayout class_name={`header-menu ${stickyHeader ? "sticky--active" : ""}`}>
       <div
