@@ -117,7 +117,7 @@ const Header = () => {
                     </a>
                 </div>
             </div>
-            <div className="row3 pt-10 flex flex-col gap-5">
+            <div className="row3 pt-5 flex flex-col gap-5">
                 <hr />
                 <h5>Get In Touch</h5>
                 <div className="contact-details-container">
