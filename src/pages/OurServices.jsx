@@ -1,12 +1,9 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
-import { Rocket, MoveRight, MoveUpRight, PhoneOutgoing, Phone, PieChart, Trophy, Puzzle, HeartHandshake } from "lucide-react";
+import { Rocket, MoveRight, PhoneOutgoing, Phone, PieChart, Trophy, Puzzle, HeartHandshake } from "lucide-react";
 import SecondaryButton from "../components/ui/SecondaryButton";
 import ClientLogoCaraousel from "../components/ui/ClientsLogoCarousel";
 import useAPIrequest from "../customhooks/useAPIrequest";
-import BlurbIconTop from "../components/ui/CounterWidget";
-import HomepageFeaturedServices from "../components/ui/HomepageFeaturedServices";
-import { Link } from "react-router-dom";
 import BlurbImageWidget from "../components/ui/BlurbImageWidget";
 import MarketingBanner from "../components/ui/MarketingBanner";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
@@ -24,7 +21,7 @@ const OurServices = () => {
   return (
     <div id="our-services">
       <SectionLayout class_name={"hero"}>
-        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-45">
+        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35 md:pt-40 lg:pt-45">
           <div className={`col1 flex flex-col items-center lg:items-start gap-5 ${heroCol1Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol1}>
             <h6 className={`preheading-text gradient-text`}>
               Our Services

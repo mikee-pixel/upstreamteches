@@ -28,7 +28,6 @@ const Homepage = () => {
   //Entrance Animation
   const { targetElement: heroCol1, activeAnimation: heroCol1Animation } = useEntranceAnimation();
   const { targetElement: heroCol2, activeAnimation: heroCol2Animation } = useEntranceAnimation(300) 
-  const { targetElement: partnershipTarget, activeAnimation: partnershipAnimation} = useEntranceAnimation();
   const { targetElement: coreServiceRow, activeAnimation: coreServiceAnimation } = useEntranceAnimation(0, 0);
   const { targetElement: quickInfoContainer, activeAnimation: quickInfoAnimation } = useEntranceAnimation();
   const { targetElement: marketingBannerCol1, activeAnimation: marketingBannerCol1Animation } = useEntranceAnimation();

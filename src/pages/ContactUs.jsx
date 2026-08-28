@@ -4,7 +4,7 @@ import BlurbImageWidget from "../components/ui/BlurbImageWidget";
 import MarketingBanner from "../components/ui/MarketingBanner";
 import FAQWidget from "../components/ui/FAQWidget";
 import ContactFormWidget from "../components/ui/ContactFormWidget";
-import { Mail, Phone, MapPin, MoveRight } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const ContactUs = () => {
     return (
         <div id="contact-us">
             <SectionLayout class_name="hero">
-                <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-45">
+                <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35 md:pt-40 lg:pt-45">
                     <div className={`col1 flex flex-col items-center lg:items-start gap-5 ${heroCol1Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol1}>
                         <h6 className={`preheading-text gradient-text text-center lg:text-left`}>
                         Contact Us

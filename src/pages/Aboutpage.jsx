@@ -35,12 +35,11 @@ const Aboutpage = () => {
   const {targetElement: ourValuesRow2Icon1, activeAnimation: ourValuesRow2Icon1Animation} = useEntranceAnimation(400);
   const {targetElement: ourValuesRow2Icon2, activeAnimation: ourValuesRow2Icon2Animation} = useEntranceAnimation(600);
   const {targetElement: ourValuesRow2Icon3, activeAnimation: ourValuesRow2Icon3Animation} = useEntranceAnimation(400);
-  const {targetElement: marketingBanner, activeAnimation: marketingBannerAnimation} = useEntranceAnimation(100);
 
   return (
     <div id="about-us">
       <SectionLayout class_name="hero">
-        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-45">
+        <div className="row flex flex-col lg:flex-row justify-between items-center gap-10 pt-35 md:pt-40 lg:pt-45">
           <div className={`col1 flex flex-col items-center lg:items-start gap-5 ${heroCol1Animation ? 'scale-up--active' : 'scale-up--disabled'}`} ref={heroCol1}>
             <h6 className={`preheading-text gradient-text`}>
               Passionate People. Powerful Strategies. Real Results.
