@@ -13,7 +13,7 @@ const App = () => {
           path="/"
           element={
             <>
-              <Homepage />
+              <Homepage/>
             </>
           }
         />

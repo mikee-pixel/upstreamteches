@@ -16,6 +16,7 @@ import { useRef, useState, useEffect } from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 
 const Header = () => {
+
   const headerMenu = useRef();
   const [stickyHeader, setStickyHeader] = useState(false);
   const prevTopScroll = useRef(0);
@@ -74,6 +75,8 @@ const Header = () => {
     }
 }, [menuSlideOutStatus]);
 
+  //Scroll To Top Function
+
   return (
     <SectionLayout
       class_name={`header-menu ${stickyHeader ? "sticky--active" : ""}`}
@@ -116,6 +119,7 @@ const Header = () => {
           </div>
           <div className="mobile-header-menu-container flex items-center" ref={mobileMenu}>
             <Menu onClick={() => setMenuSlideOutStatus(true)} />
+            {/* Mobile Menu */}
             <div className={`mobile-menu-container flex flex-col px-5 py-10 ${menuSlideOutStatus ? "active" : ""}`}>
               <div className="row1 flex flex-row justify-between">
                 <img
@@ -209,9 +213,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* Mobile Menu */}
-      
+      </div>      
     </SectionLayout>
   );
 };

@@ -5,9 +5,6 @@ import HomepageFeaturedServices from "../components/ui/HomepageFeaturedServices"
 import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
 import BlurbIconLeft from "../components/ui/BlurbIconLeft";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
-import useAPIrequest from "../customhooks/useAPIrequest";
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Rocket,
   SquareArrowOutUpRight,
@@ -60,7 +57,7 @@ const Homepage = () => {
               <SecondaryButton 
                 buttonlabel="Talk To Us" 
                 icon={<MoveRight />} 
-                link={"/contact-us/"}
+                link={"/contact-us/#get-in-touch"}
               />
             </div>
           </div>

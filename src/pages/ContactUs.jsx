@@ -41,7 +41,7 @@ const ContactUs = () => {
                 </div>
             </SectionLayout>
             <SectionLayout class_name={"get-in-touch"}>
-                <div className="row flex flex-col lg:flex-row justify-between gap-10 mt-30">
+                <div className="row flex flex-col lg:flex-row justify-between gap-10 mt-30" id="get-in-touch">
                     <div className="col col1 flex flex-col gap-5 items-start">
                         <h6 className="preheading-text gradient-text">Get In Touch</h6>
                         <h2>Have a Project in Mind? Let's Discussed!</h2>
