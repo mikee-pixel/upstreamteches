@@ -34,7 +34,7 @@ const Aboutpage = () => {
   const {targetElement: ourValuesRow1, activeAnimation: ourValuesRow1Animation} = useEntranceAnimation(200);
   const {targetElement: ourValuesRow2Icon1, activeAnimation: ourValuesRow2Icon1Animation} = useEntranceAnimation(400);
   const {targetElement: ourValuesRow2Icon2, activeAnimation: ourValuesRow2Icon2Animation} = useEntranceAnimation(600);
-  const {targetElement: ourValuesRow2Icon3, activeAnimation: ourValuesRow2Icon3Animation} = useEntranceAnimation(400);
+  const {targetElement: ourValuesRow2Icon3, activeAnimation: ourValuesRow2Icon3Animation} = useEntranceAnimation(800);
 
   return (
     <div id="about-us">

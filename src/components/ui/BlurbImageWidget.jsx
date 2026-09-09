@@ -14,12 +14,15 @@ const BlurbImageWidget = ({id, is_icon_type_img, featured_icon, title, excerpt, 
       <div className="blurb-title-container">
         {title}
       </div>
+      {excerpt && 
       <div className="blurb-content-container">
         <p className="service-excerpt">{excerpt}</p>
       </div>
+      }
+      
       {has_btn && <Link
         to={button_link}
-        className="service-btn small-button flex flex-row gap-2"
+        className="service-btn small-button flex flex-row items-center gap-2"
       >
         {button_label}
         <MoveRight size={18} />

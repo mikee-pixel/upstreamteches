@@ -17,6 +17,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --border-color: #e2e8f0;
+  --border-grid-color: rgba(226, 232, 240, 0.15);
 
   --heading-font-style: "Poppins";
   --text-font-style: "Inter";
@@ -371,6 +372,20 @@ p.small-body {
 .client-logo-carousel .row {
   background-color: var(--tertiary-color);
   border-radius: 20px;
+  position: relative;
+}
+
+.client-logo-carousel .row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--border-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.client-logo-carousel .row > * {
+  position: relative;
+  z-index: 1;
 }
 
 .client-logo-carousel h5 {
@@ -531,6 +546,19 @@ p.small-body {
     #1d3b54 60%
   );
   z-index: 0;
+}
+
+.marketing-banner-component .row::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--border-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.marketing-banner-component .row > * {
+  position: relative;
+  z-index: 1;
 }
 
 .marketing-banner-component .row .col1 {
@@ -814,11 +842,10 @@ input:-webkit-autofill:active {
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .header-menu.sticky--active .row {
-  /* background: transparent; */
-  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
 }
 
@@ -1344,6 +1371,20 @@ input:-webkit-autofill:active {
 #homepage .marketing-banner .row .upper-banner {
   background-color: var(--tertiary-color);
   border-radius: 20px;
+  position: relative;
+}
+
+#homepage .marketing-banner .row .upper-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--border-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+#homepage .marketing-banner .row .upper-banner > * {
+  position: relative;
+  z-index: 1;
 }
 
 #homepage .marketing-banner .upper-banner .icon-box .btn-container {
@@ -2234,4 +2275,294 @@ input:-webkit-autofill:active {
   #contact-us .work-with-us .blurb-item {
     width: 100%;
   }
+}
+
+/*SERVICE PAGES*/
+/* Website Development Page Style */
+/* Hero Section */
+#website-development .hero {
+  background-color: var(--heading-text);
+  position: relative;
+}
+
+#website-development .hero::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(to right, var(--border-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-grid-color) 1px, transparent 1px); 
+  inset: 0;
+  background-size: 50px 50px;
+}
+
+#website-development .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Core Values Section*/
+#website-development .core-values {
+  position: relative;
+  z-index: 2;
+}
+
+#website-development .core-values .core-values-container { 
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+#website-development .core-values .core-values-container .blurb-item {
+  position: relative;
+  width: 15%;
+  align-content: flex-start;
+}
+
+#website-development .core-values .core-values-container .blurb-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 1px;
+  height: 60%;
+  background-color: var(--border-color);
+  
+}
+
+#website-development .core-values .blurb-item .blurb-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+#website-development .core-values .blurb-item .blurb-image-container img {
+  width: 70px;
+}
+
+#website-development .core-values .blurb-item .blurb-title-container p {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-black);
+  font-size: 15px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  #website-development .core-values .core-values-container .blurb-item {
+    width: 30%;
+  }
+  
+  #website-development .core-values .core-values-container .blurb-item:not(:last-child)::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #website-development .core-values .core-values-container .blurb-item {
+    width: 45%;
+    padding: calc(var(--spacing) * 1);
+  }
+}
+
+/* Overview Section*/
+#website-development .overview .col1 .overview-list-container ul li svg {
+  stroke: var(--primary-color);
+}
+
+#website-development .overview .col2 .image-container {
+  position: relative;
+}
+
+#website-development .overview .col2  .blurb-icon-container {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  transform: translate(8%, 45%);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#website-development .overview .blurb-icon-container .blurb-item {
+  grid-template-columns: auto auto;
+  column-gap: 40px;
+}
+
+#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container {
+  grid-row: 1 / span 2;
+  position: relative;
+}
+
+#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+}
+
+#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container svg {
+  stroke: var(--color-white);
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 14px;
+}
+
+#website-development .overview  .blurb-icon-container .blurb-item .service-btn {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+/* Our Process */
+#website-development .our-process {
+  margin-top: calc(var(--spacing) * 40);
+  padding: calc(var(--spacing) * 20);
+  background-color: rgba(46, 175, 157, 0.1);
+}
+
+#website-development .our-process .row2 .blurb-item {
+  align-content: flex-start;
+  width: 15%;
+}
+
+#website-development .our-process .row2 .blurb-item .blurb-image-container {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+#website-development .our-process .row2 .blurb-item .blurb-image-container::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  z-index: 0;
+  border-radius: 50px;
+}
+
+#website-development .our-process .row2 .blurb-item .blurb-image-container::after {
+  position: absolute;
+  left: 0px;
+  top: 70px;
+  font-size: 18px;
+  font-family: var(--heading-font-style);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+#website-development .our-process .row2 .blurb-item .blurb-image-container svg {
+  stroke: var(--color-white);
+  position: relative;
+  left: 30px;
+  top: 30px;
+  transform: translate(-15px, -30px);
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  #website-development .our-process {
+    padding: calc(var(--spacing) * 20) calc(var(--spacing) * 5);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #website-development .our-process .row2 .blurb-item {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #website-development .our-process .row2 .blurb-item {
+    width: 100%;
+  }
+}
+
+/* Why Choose Us */
+#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item {
+  grid-template-columns: auto auto;
+  justify-content: flex-start;
+  row-gap: 10px;
+  column-gap: 40px;
+}
+
+#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container {
+  grid-row: 1 / span 2;
+  position: relative;
+}
+
+#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  border-radius: 80px;
+}
+
+#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container svg {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  stroke: var(--color-white);
+  left: 35px;
+  top: 35px;
+  transform: translate(-25px, -25px);
+}
+
+/* Service Marketing Banner */
+.service-marketing-banner {
+  margin-top: calc(var(--spacing) * 40);
+}
+
+.service-marketing-banner .row {
+  position: relative;
+  background-color: var(--tertiary-color);
+}
+
+.service-marketing-banner .row::before {
+  
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      to right,
+      var(--border-grid-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--border-grid-color) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+}
+
+.service-marketing-banner .row .col1 .marketing-blurb-icon .marketing-icon {
+  position: relative;
+}
+
+.service-marketing-banner .row .col1 .marketing-blurb-icon .marketing-icon::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  border: 2px solid var(--color-white);
+}
+
+.service-marketing-banner .row .col1 .marketing-blurb-icon .marketing-icon svg {
+  position: relative;
+  top: 40px;
+  left: 40px;
+  transform: translate(-25px, -25px);
 }

@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 const PageScrollLocator = () => {
-    console.log("PageScrollLocator component render!");
     const {pathname: currentLocation, hash: anchor} = useLocation();
 
     useEffect(() => {

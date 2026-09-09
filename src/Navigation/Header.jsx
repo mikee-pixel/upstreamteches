@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
 
@@ -22,29 +23,73 @@ const Header = () => {
   const prevTopScroll = useRef(0);
   const [menuSlideOutStatus, setMenuSlideOutStatus] = useState(false);
   const mobileMenu = useRef(null);
+  const currentLoc = useLocation();
+  // const [backdropFilterActive, setBackdropFilterActive] = useState(false);
 
-  //Sticky Header Navigation
+  
+  //Set Header Menu Sticky and Backdrop Filter
   useEffect(() => {
-    if (!headerMenu.current) return;
+    if(!headerMenu.current) return;
+
+    const isServicePage = currentLoc.pathname.includes("/services/");
 
     const handleScroll = () => {
-      const currentTopScroll = window.scrollY;
+      const currentScroll = window.scrollY;
 
-      if (currentTopScroll === 0) {
-        setStickyHeader(false);
-      } else if (currentTopScroll > prevTopScroll.current) {
-        setStickyHeader(false);
-      } else {
-        setStickyHeader(true);
+      if(currentScroll === 0) {
+          setStickyHeader(false);
+        } else if (currentScroll > prevTopScroll.current) {
+          setStickyHeader(false);
+        } else {
+          setStickyHeader(true);
       }
 
-      prevTopScroll.current = currentTopScroll;
-    };
+      prevTopScroll.current = currentScroll;
+    }
 
+
+    if(isServicePage) {
+      handleScroll();
+    } else {
+      handleScroll();
+    }
+
+    
+
+
+    // const handleScroll = () => {
+    //   const currentScroll = window.scrollY;
+    //   const isServicePage = currentLoc.pathname.includes("/services/");
+
+    //   if(isServicePage) {
+    //     if(currentScroll === 0) {
+    //       setStickyHeader(false);
+    //     } else if (currentScroll > prevTopScroll.current) {
+    //       setStickyHeader(false);
+    //     } else {
+    //       setStickyHeader(true);
+    //     }
+    //   } else {
+
+    //     if(currentScroll === 0) {
+    //       setStickyHeader(false);
+    //     } else if (currentScroll > prevTopScroll.current) {
+    //       setStickyHeader(false);
+    //     } else {
+    //       setStickyHeader(true);
+    //       setBackdropFilterActive(true);
+    //     }
+    //   }
+
+    //   prevTopScroll.current = currentScroll;
+    // }
+    
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    
+  }, [currentLoc.pathname])
+
 
   //Entrance Animation
   const {
@@ -73,9 +118,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("click", handleSlideOutMenu);
     }
-}, [menuSlideOutStatus]);
-
-  //Scroll To Top Function
+  }, [menuSlideOutStatus]);
 
   return (
     <SectionLayout
