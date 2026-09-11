@@ -863,6 +863,11 @@ input:-webkit-autofill:active {
   z-index: 0;
 }
 
+.header-menu .branding-logo {
+  position: relative;
+  z-index: 1;
+}
+
 .header-menu .branding-logo img {
   width: 80%;
   height: auto;
@@ -1032,10 +1037,6 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 850px) {
   .mobile-menu-container {
     display: flex;
-  }
-
-  .mobile-menu-container {
-    /* overflow-y: auto; */
   }
 }
 
