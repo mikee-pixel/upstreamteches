@@ -47,42 +47,11 @@ const Header = () => {
       prevTopScroll.current = currentScroll;
     }
 
-
     if(isServicePage) {
       handleScroll();
     } else {
       handleScroll();
     }
-
-    
-
-
-    // const handleScroll = () => {
-    //   const currentScroll = window.scrollY;
-    //   const isServicePage = currentLoc.pathname.includes("/services/");
-
-    //   if(isServicePage) {
-    //     if(currentScroll === 0) {
-    //       setStickyHeader(false);
-    //     } else if (currentScroll > prevTopScroll.current) {
-    //       setStickyHeader(false);
-    //     } else {
-    //       setStickyHeader(true);
-    //     }
-    //   } else {
-
-    //     if(currentScroll === 0) {
-    //       setStickyHeader(false);
-    //     } else if (currentScroll > prevTopScroll.current) {
-    //       setStickyHeader(false);
-    //     } else {
-    //       setStickyHeader(true);
-    //       setBackdropFilterActive(true);
-    //     }
-    //   }
-
-    //   prevTopScroll.current = currentScroll;
-    // }
     
     window.addEventListener("scroll", handleScroll);
 

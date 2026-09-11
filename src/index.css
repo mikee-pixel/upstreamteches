@@ -838,15 +838,29 @@ input:-webkit-autofill:active {
 }
 
 .header-menu .row {
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.header-menu.sticky--active .row {
+.header-menu .row > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add backdrop and background color to header row */
+.header-menu .row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
+  z-index: 0;
 }
 
 .header-menu .branding-logo img {
@@ -913,7 +927,6 @@ input:-webkit-autofill:active {
 /*Mobile Header Menu*/
 .mobile-menu-container {
   display: none;
-
   position: fixed;
   top: 0%;
   right: 0;
@@ -923,8 +936,6 @@ input:-webkit-autofill:active {
   background-color: var(--heading-text);
   z-index: 10;
   border-radius: 0px 0 0 100px;
-  /* inset: 0; */
-
   transition: transform 1s ease-in-out;
 }
 
@@ -1021,6 +1032,10 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 850px) {
   .mobile-menu-container {
     display: flex;
+  }
+
+  .mobile-menu-container {
+    /* overflow-y: auto; */
   }
 }
 
