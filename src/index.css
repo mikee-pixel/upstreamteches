@@ -847,8 +847,8 @@ input:-webkit-autofill:active {
 }
 
 .header-menu .row > * {
-  position: relative;
-  z-index: 1;
+  /* position: relative; */
+  /* z-index: 1; */
 }
 
 /* Add backdrop and background color to header row */
