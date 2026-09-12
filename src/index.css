@@ -23,6 +23,8 @@
   --text-font-style: "Inter";
   --button-font-style: "Inter";
 
+  --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
   interpolate-size: allow-keywords;
 }
 
@@ -2336,7 +2338,7 @@ input:-webkit-autofill:active {
   top: 50%;
   transform: translate(0, -50%);
   width: 1px;
-  height: 60%;
+  height: 100px;
   background-color: var(--border-color);
   
 }
@@ -2359,19 +2361,40 @@ input:-webkit-autofill:active {
 
 
 @media screen and (max-width: 1023px) {
+  #website-development .core-values .core-values-container {
+    box-shadow: none;
+  }
+
   #website-development .core-values .core-values-container .blurb-item {
     width: 30%;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
   }
   
   #website-development .core-values .core-values-container .blurb-item:not(:last-child)::before {
     display: none;
+  }
+
+  #website-development .core-values .blurb-item .blurb-title-container p {
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 640px) {
   #website-development .core-values .core-values-container .blurb-item {
     width: 45%;
-    padding: calc(var(--spacing) * 1);
+    padding: calc(var(--spacing) * 5);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #website-development .core-values .blurb-item .blurb-image-container img {
+    width: 50px;
+  }
+
+  #website-development .core-values .blurb-item .blurb-title-container p {
+    font-size: 15px;
   }
 }
 
@@ -2384,12 +2407,12 @@ input:-webkit-autofill:active {
   position: relative;
 }
 
-#website-development .overview .col2  .blurb-icon-container {
+#website-development .overview .col2 .blurb-icon-container {
   position: absolute;
   left: 0%;
   bottom: 0%;
   transform: translate(8%, 45%);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 #website-development .overview .blurb-icon-container .blurb-item {

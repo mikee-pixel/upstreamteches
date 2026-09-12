@@ -47,7 +47,7 @@ const WebsiteDevelopment = () => {
     return (
         <div id="website-development">
             <SectionLayout class_name="hero">
-                <div className="row flex flex-col lg:flex-row justify-between w-full pt-35 md:pt-40 lg:pt-45 pb-35 gap-10">
+                <div className="row flex flex-col lg:flex-row justify-between w-full pt-35 md:pt-40 lg:pt-45 pb-20 lg:pb-35 gap-25 lg:gap-10">
                 <div
                     className={`col col1 w-full lg:w-[50%] flex flex-col gap-5 justify-center`}>
                     <h6 className={`preheading-text gradient-text text-center lg:text-left`} >
@@ -70,15 +70,15 @@ const WebsiteDevelopment = () => {
                 <div
                     className={`col col2 w-full lg:w-[50%] `}>
                     <img
-                    src="/images/A computer, phone, and tablet displaying the same web page.png"
-                    alt="A computer, phone, and tablet displaying the same web page"
+                    src="/images/A group of individuals collaborating on a computer while a crane operates in the background.png"
+                    alt="A group of individuals collaborating on a computer while a crane operates in the background"
                     />
                 </div>
                 </div>
             </SectionLayout>
             <SectionLayout class_name={"core-values"}>
                 <div className="row w-full">
-                    <div className="core-values-container flex lg:flex-row max-lg:flex-wrap justify-center lg:justify-around items-stretch gap-5 sm:gap-10 p-3 mt-[-90px] sm:mt-[-100px] rounded-[20px] bg-(--color-white)">
+                    <div className="core-values-container flex lg:flex-row max-lg:flex-wrap justify-center lg:justify-around items-stretch gap-5 lg:gap-10 sm:p-3 mt-20 lg:-mt-20 rounded-[20px] bg-transparent lg:bg-(--color-white)">
                         <BlurbImageWidget 
                             id={0}
                             is_icon_type_img={true}
@@ -120,22 +120,22 @@ const WebsiteDevelopment = () => {
                 </div>
             </SectionLayout>
             <SectionLayout class_name={"overview"}>
-                <div className="row flex flex-col-reverse lg:flex-row justify-between gap-20 lg:gap-10 pt-40">
+                <div className="row flex flex-col-reverse lg:flex-row justify-between gap-10 lg:gap-20 lg:gap-10 pt-20 lg:pt-40">
                     <div className="col col1 flex flex-col gap-5 w-full lg:w-[40%]">
                         <h6 className="preheading-text gradient-text">Overview</h6>
                         <h2>First Impressions Create Lasting Impact</h2>
                         <p>In today's digital world, your website is often the first impression your business makes. We build websites that are visually stunning, user-friendly, fast, and optimized for search engine.</p>
                         <div className="overview-list-container">
                             <ul className="flex flex-col gap-5">
-                                <li><p className="flex flex-row items-center gap-2"><CircleCheck/> Reflect your brand identify and build trust</p></li>
-                                <li><p className="flex flex-row items-center gap-2"><CircleCheck/> Deliver seamless experience across all devices</p></li>
-                                <li><p className="flex flex-row items-center gap-2"><CircleCheck/> Load fast and follow the latest web standards</p></li>
-                                <li><p className="flex flex-row items-center gap-2"><CircleCheck/> Convert visitors into customers</p></li>
-                                <li><p className="flex flex-row items-center gap-2"><CircleCheck/> Be easy for you to manage and scale</p></li>
+                                <li><p className="flex flex-row items-start sm:items-center gap-2"><CircleCheck className="size-7 sm:size-6"/> Reflect your brand identify and build trust</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Deliver seamless experience across all devices</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Load fast and follow the latest web standards</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Convert visitors into customers</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Be easy for you to manage and scale</p></li>
                             </ul>
                         </div>
                         <div className="mobile-sm-mk-banner flex justify-center lg:hidden mt-5">
-                            <div className="blurb-icon-container bg-(--color-white) rounded-[10px] w-full sm:w-[80%] p-1">
+                            <div className="blurb-icon-container bg-(--color-white) rounded-[10px] shadow-(--box-shadow) w-full sm:w-[80%] p-1">
                                 <BlurbImageWidget
                                     id={0}
                                     is_icon_type_img={false}
@@ -180,7 +180,7 @@ const WebsiteDevelopment = () => {
                         <p>Partner with us to bring your digital vision to life. Contact us today to discuss your project requirements.</p>
                     </div>
                 </div>
-                <div className="row row2 flex flex-row max-lg:flex-wrap justify-between mt-20">
+                <div className="row row2 flex flex-row max-lg:flex-wrap justify-between mt-10 sm:mt-20">
                     {webDevProcess.map(process => (
                         <BlurbImageWidget
                             key={process.id}
