@@ -57,7 +57,7 @@ const WebsiteDevelopment = () => {
                     Website Design and Development
                     </h1>
                     <p className={`large-body !text-(--color-white) text-center lg:text-left`}>
-                    We create modern, responsive, and high-performance websites that not only look great but also deliver real results for your business.
+                    We create modern, responsive, and high-performance websites that not only look great but also drive real results for your business.
                     </p>
                     <div className={`container-buttons flex flex-col md:flex-row justify-center lg:justify-start items-center gap-5 md:gap-10`}>
                         <PrimaryButton
@@ -124,14 +124,14 @@ const WebsiteDevelopment = () => {
                     <div className="col col1 flex flex-col gap-5 w-full lg:w-[40%]">
                         <h6 className="preheading-text gradient-text">Overview</h6>
                         <h2>First Impressions Create Lasting Impact</h2>
-                        <p>In today's digital world, your website is often the first impression your business makes. We build websites that are visually stunning, user-friendly, fast, and optimized for search engine.</p>
+                        <p>Today’s digital landscape requires more than just a site; it needs a growth-driven digital asset. We build websites that elevate your branding, engage visitors, and convert browsers into paying customers.</p>
                         <div className="overview-list-container">
                             <ul className="flex flex-col gap-5">
-                                <li><p className="flex flex-row items-start sm:items-center gap-2"><CircleCheck className="size-7 sm:size-6"/> Reflect your brand identify and build trust</p></li>
-                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Deliver seamless experience across all devices</p></li>
-                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Load fast and follow the latest web standards</p></li>
-                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Convert visitors into customers</p></li>
-                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Be easy for you to manage and scale</p></li>
+                                <li><p className="flex flex-row items-start sm:items-center gap-2"><CircleCheck className="size-7 sm:size-6"/> Reflects your brand credibility and builds trust</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Delivers a seamless user experience across all devices</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Optimized from day one for search engine rankings</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Fast load speeds that reduce bounce rates</p></li>
+                                <li><p className="flex flex-row items-start gap-2"><CircleCheck className="size-7 sm:size-6"/> Built to grow as your business expands</p></li>
                             </ul>
                         </div>
                         <div className="mobile-sm-mk-banner flex justify-center lg:hidden mt-5">
@@ -176,7 +176,7 @@ const WebsiteDevelopment = () => {
                     </div>
 
                     <div className="col col1 flex flex-col gap-5 w-full md:w-[50%]">
-                        <p>At UpstreamTeches, we believe that a successful website is more than just a collection of pages. It's a powerful tool that can hlep you achieve your business goals. Our comprehensive approach to web development ensures that your website is not only visually appealing but also highly functional and effective.</p>
+                        <p>At UpstreamTeches, we believe that a successful website is more than just a collection of pages. It's a powerful tool that can help you achieve your business goals. Our comprehensive approach to web development ensures that your website is not only visually appealing but also highly functional and effective.</p>
                         <p>Partner with us to bring your digital vision to life. Contact us today to discuss your project requirements.</p>
                     </div>
                 </div>
@@ -201,28 +201,28 @@ const WebsiteDevelopment = () => {
                     <div className="col col2 flex flex-col gap-5 w-full lg:w-[50%]">
                         <h6 className="gradient-text subheading-text">Why Choose Us</h6>
                         <h2>Better Website. Better Results</h2>
-                        <p>We don't just build websites, we craft digital experience that help your business grow, stand out, and succeed online.</p>
+                        <p>We don't just build websites; we build digital growth engines tailored to your business goals and market demands.</p>
                         <div className="blurb-icons-container flex flex-col">
                             <BlurbImageWidget 
                                 id={1}
                                 is_icon_type_img={false}
                                 featured_icon={<Puzzle />}
                                 title={<h6>Custom Solution</h6>}
-                                excerpt={"Tailored websites build ot match your brand and business goals."}
+                                excerpt={"Tailored designs built specifically around your brand and target audience."}
                             />
                             <BlurbImageWidget 
                                 id={2}
                                 is_icon_type_img={false}
                                 featured_icon={<Gauge />}
                                 title={<h6>Performance Driven</h6>}
-                                excerpt={"Fast, secure, and optimized websites that deliver better user experience."}
+                                excerpt={"Fast, secure, and mobile-friendly architecture engineered for high conversions."}
                             />
                             <BlurbImageWidget 
                                 id={3}
                                 is_icon_type_img={false}
                                 featured_icon={<Award />}
                                 title={<h6>Affordable Packages</h6>}
-                                excerpt={"High-quality website development at competitive pricing."}
+                                excerpt={"Scalable web design packages built around transparent, competitive pricing."}
                             />
                         </div>
                     </div>
@@ -237,7 +237,7 @@ const WebsiteDevelopment = () => {
                                 </div>
                                 <div className="marketing-text-content flex flex-col gap-5">
                                     <h6 className="text-(--color-white)">Ready to Build a Website That Works For You?</h6>
-                                    <h2 className="text-(--color-white)">Let's Elevate Your Business With a Powerful Online Presence</h2>
+                                    <h2 className="text-(--color-white)">Let’s Elevate Your Business With a Powerful Online Presence</h2>
                                     <div className="tablet-btn-container flex lg:hidden w-full">
                                         <PrimaryLargeButton 
                                             buttonlabel={"Get Started Today"}
