@@ -11,6 +11,7 @@ import {
   Mail,
   PhoneCall,
   CircleArrowRight,
+  MapPin
 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
@@ -135,7 +136,7 @@ const Header = () => {
             <div className={`mobile-menu-container flex flex-col px-5 py-10 ${menuSlideOutStatus ? "active" : ""}`}>
               <div className="row1 flex flex-row justify-between">
                 <img
-                  src="../images/upstream logo mobile menu.png"
+                  src="/images/upstream logo mobile menu.png"
                   alt="upstream logo mobile menu"
                   className="branding-logo-mobile-menu w-[40%]"
                 />
@@ -215,7 +216,7 @@ const Header = () => {
                     <li>
                       <a href="maps.app.goo.gl/bdZ7T3caRjAhVsuk7" target="_blank">
                         <p className="flex flex-row items-center gap-5 ">
-                          <Phone /> Bacoor, Cavite, 4102
+                          <MapPin /> Bacoor, Cavite, 4102
                         </p>
                       </a>
                     </li>

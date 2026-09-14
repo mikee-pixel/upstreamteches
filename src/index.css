@@ -34,6 +34,8 @@ body {
   box-sizing: border-box;
   font-family: var(--text-font-style);
   background-color: var(--body-background);
+
+  overflow-x: clip; /*<- Changes to fix mobile menu*/
 }
 
 @media screen and (max-width: 1080px) {
@@ -937,9 +939,12 @@ input:-webkit-autofill:active {
   position: fixed;
   top: 0%;
   right: 0;
-  transform: translate(200%, 0%);
+  /* transform: translate(200%, 0%);  <-- Changes to Fix the Mobile Menu*/
+  transform: translateX(100%);
   width: 60%;
+  /* height: 100vh; <-- Changes to Fix the Mobile Menu */
   height: 100vh;
+  height: 100dvh;
   background-color: var(--heading-text);
   z-index: 10;
   border-radius: 0px 0 0 100px;
@@ -2295,15 +2300,14 @@ input:-webkit-autofill:active {
   }
 }
 
-/*SERVICE PAGES*/
-/* Website Development Page Style */
+/*SERVICE PAGES TEMPLATE*/
 /* Hero Section */
-#website-development .hero {
+.service-page .hero {
   background-color: var(--heading-text);
   position: relative;
 }
 
-#website-development .hero::before {
+.service-page .hero::before {
   content: "";
   position: absolute;
   background-image: linear-gradient(to right, var(--border-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-grid-color) 1px, transparent 1px); 
@@ -2311,27 +2315,27 @@ input:-webkit-autofill:active {
   background-size: 50px 50px;
 }
 
-#website-development .hero > * {
+.service-page .hero > * {
   position: relative;
   z-index: 1;
 }
 
 /* Core Values Section*/
-#website-development .core-values {
+.service-page .core-values {
   position: relative;
   z-index: 2;
 }
 
-#website-development .core-values .core-values-container { 
+.service-page .core-values .core-values-container { 
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
-#website-development .core-values .core-values-container .blurb-item {
+.service-page .core-values .core-values-container .blurb-item {
   position: relative;
   width: 15%;
   align-content: flex-start;
 }
 
-#website-development .core-values .core-values-container .blurb-item:not(:last-child)::before {
+.service-page .core-values .core-values-container .blurb-item:not(:last-child)::before {
   content: "";
   position: absolute;
   right: -15px;
@@ -2343,16 +2347,16 @@ input:-webkit-autofill:active {
   
 }
 
-#website-development .core-values .blurb-item .blurb-image-container {
+.service-page .core-values .blurb-item .blurb-image-container {
   display: flex;
   justify-content: center;
 }
 
-#website-development .core-values .blurb-item .blurb-image-container img {
+.service-page .core-values .blurb-item .blurb-image-container img {
   width: 70px;
 }
 
-#website-development .core-values .blurb-item .blurb-title-container p {
+.service-page .core-values .blurb-item .blurb-title-container p {
   text-align: center;
   font-weight: 600;
   color: var(--color-black);
@@ -2361,53 +2365,53 @@ input:-webkit-autofill:active {
 
 
 @media screen and (max-width: 1023px) {
-  #website-development .core-values .core-values-container {
+  .service-page .core-values .core-values-container {
     box-shadow: none;
   }
 
-  #website-development .core-values .core-values-container .blurb-item {
+  .service-page .core-values .core-values-container .blurb-item {
     width: 30%;
     background-color: var(--color-white);
     border-radius: 20px;
     box-shadow: var(--box-shadow);
   }
   
-  #website-development .core-values .core-values-container .blurb-item:not(:last-child)::before {
+  .service-page .core-values .core-values-container .blurb-item:not(:last-child)::before {
     display: none;
   }
 
-  #website-development .core-values .blurb-item .blurb-title-container p {
+  .service-page .core-values .blurb-item .blurb-title-container p {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  #website-development .core-values .core-values-container .blurb-item {
+  .service-page .core-values .core-values-container .blurb-item {
     width: 45%;
     padding: calc(var(--spacing) * 5);
   }
 }
 
 @media screen and (max-width: 500px) {
-  #website-development .core-values .blurb-item .blurb-image-container img {
+  .service-page .core-values .blurb-item .blurb-image-container img {
     width: 50px;
   }
 
-  #website-development .core-values .blurb-item .blurb-title-container p {
+  .service-page .core-values .blurb-item .blurb-title-container p {
     font-size: 15px;
   }
 }
 
 /* Overview Section*/
-#website-development .overview .col1 .overview-list-container ul li svg {
+.service-page .overview .col1 .overview-list-container ul li svg {
   stroke: var(--primary-color);
 }
 
-#website-development .overview .col2 .image-container {
+.service-page .overview .col2 .image-container {
   position: relative;
 }
 
-#website-development .overview .col2 .blurb-icon-container {
+.service-page .overview .col2 .blurb-icon-container {
   position: absolute;
   left: 0%;
   bottom: 0%;
@@ -2415,17 +2419,17 @@ input:-webkit-autofill:active {
   box-shadow: var(--box-shadow);
 }
 
-#website-development .overview .blurb-icon-container .blurb-item {
+.service-page .overview .blurb-icon-container .blurb-item {
   grid-template-columns: auto auto;
   column-gap: 40px;
 }
 
-#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container {
+.service-page .overview  .blurb-icon-container .blurb-item .blurb-image-container {
   grid-row: 1 / span 2;
   position: relative;
 }
 
-#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container::before {
+.service-page .overview  .blurb-icon-container .blurb-item .blurb-image-container::before {
   content: "";
   position: absolute;
   top: 0%;
@@ -2437,7 +2441,7 @@ input:-webkit-autofill:active {
   border-radius: 50px;
 }
 
-#website-development .overview  .blurb-icon-container .blurb-item .blurb-image-container svg {
+.service-page .overview  .blurb-icon-container .blurb-item .blurb-image-container svg {
   stroke: var(--color-white);
   font-size: 30px;
   height: 50px;
@@ -2446,30 +2450,30 @@ input:-webkit-autofill:active {
   top: 14px;
 }
 
-#website-development .overview  .blurb-icon-container .blurb-item .service-btn {
+.service-page .overview  .blurb-icon-container .blurb-item .service-btn {
   font-size: 16px;
   color: var(--primary-color);
 }
 
 /* Our Process */
-#website-development .our-process {
+.service-page .our-process {
   margin-top: calc(var(--spacing) * 40);
   padding: calc(var(--spacing) * 20);
   background-color: rgba(46, 175, 157, 0.1);
 }
 
-#website-development .our-process .row2 .blurb-item {
+.service-page .our-process .row2 .blurb-item {
   align-content: flex-start;
   width: 15%;
 }
 
-#website-development .our-process .row2 .blurb-item .blurb-image-container {
+.service-page .our-process .row2 .blurb-item .blurb-image-container {
   position: relative;
   width: fit-content;
   margin-bottom: 15px;
 }
 
-#website-development .our-process .row2 .blurb-item .blurb-image-container::before {
+.service-page .our-process .row2 .blurb-item .blurb-image-container::before {
   content: "";
   position: absolute;
   left: 0%;
@@ -2482,7 +2486,7 @@ input:-webkit-autofill:active {
   border-radius: 50px;
 }
 
-#website-development .our-process .row2 .blurb-item .blurb-image-container::after {
+.service-page .our-process .row2 .blurb-item .blurb-image-container::after {
   position: absolute;
   left: 0px;
   top: 70px;
@@ -2492,7 +2496,7 @@ input:-webkit-autofill:active {
   color: var(--primary-color);
 }
 
-#website-development .our-process .row2 .blurb-item .blurb-image-container svg {
+.service-page .our-process .row2 .blurb-item .blurb-image-container svg {
   stroke: var(--color-white);
   position: relative;
   left: 30px;
@@ -2503,37 +2507,37 @@ input:-webkit-autofill:active {
 }
 
 @media screen and (max-width: 1024px) {
-  #website-development .our-process {
+  .service-page .our-process {
     padding: calc(var(--spacing) * 20) calc(var(--spacing) * 5);
   }
 }
 
 @media screen and (max-width: 1023px) {
-  #website-development .our-process .row2 .blurb-item {
+  .service-page .our-process .row2 .blurb-item {
     width: 30%;
   }
 }
 
 @media screen and (max-width: 640px) {
-  #website-development .our-process .row2 .blurb-item {
+  .service-page .our-process .row2 .blurb-item {
     width: 100%;
   }
 }
 
 /* Why Choose Us */
-#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item {
+.service-page .why-choose-us .col2 .blurb-icons-container .blurb-item {
   grid-template-columns: auto auto;
   justify-content: flex-start;
   row-gap: 10px;
   column-gap: 40px;
 }
 
-#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container {
+.service-page .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container {
   grid-row: 1 / span 2;
   position: relative;
 }
 
-#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container::before {
+.service-page .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container::before {
   content: "";
   position: absolute;
   left: 0%;
@@ -2544,7 +2548,7 @@ input:-webkit-autofill:active {
   border-radius: 80px;
 }
 
-#website-development .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container svg {
+.service-page .why-choose-us .col2 .blurb-icons-container .blurb-item .blurb-image-container svg {
   width: 50px;
   height: 50px;
   position: relative;
