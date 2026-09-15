@@ -1,13 +1,18 @@
 import SectionLayout from "../../sections/SectionLayout";
 import { CircleCheck, Mail } from "lucide-react";
 import BlurbImageWidget from "../../ui/BlurbImageWidget";
+import useEntranceAnimation from "../../../customhooks/useEntranceAnimation";
 
 const ServiceOverview = ({overView}) => {
-    console.log(overView);
+
+    const {targetElement: col1, activeAnimation: col1Animation} = useEntranceAnimation();
+    const {targetElement: col2, activeAnimation: col2Animation} = useEntranceAnimation();
+
+
     return(
         <SectionLayout class_name={"overview"}>
             <div className="row flex flex-col-reverse lg:flex-row justify-between gap-10 lg:gap-20 lg:gap-10 pt-20 lg:pt-40">
-                <div className="col col1 flex flex-col gap-5 w-full lg:w-[40%]">
+                <div className={`col col1 flex flex-col gap-5 w-full lg:w-[40%] ${col1Animation ? 'slide-left--active' : 'slide-left--disabled'}`} ref={col1}>
                     <h6 className="preheading-text gradient-text">{overView.col1.preheader}</h6>
                     <h2>{overView.col1.title}</h2>
                     <p>{overView.col1.subheader}</p>
@@ -33,7 +38,7 @@ const ServiceOverview = ({overView}) => {
                     </div>
                     
                 </div>
-                <div className="col col2 w-full lg:w-[50%]">
+                <div className={`col col2 w-full lg:w-[50%] ${col2Animation ? 'slide-right--active' : 'slide-right--disabled'}`} ref={col2}>
                     <div className="image-container">
                         <img src={overView.col2.featuredImage} alt={overView.col2.altImg} />
                         <div className="blurb-icon-container bg-(--color-white) rounded-[10px] lg:w-[80%] xl:w-[60%] p-1 max-lg:hidden">

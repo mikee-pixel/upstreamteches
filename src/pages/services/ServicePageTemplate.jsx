@@ -1,20 +1,19 @@
 import { useParams } from "react-router-dom";
-// import servicesData from "./serviceData.js";
-import servicesData from "./servicesData";
+import ServicesData from "./servicesData";
 import ServiceHero from "../../components/layouts/services/ServiceHero";
 import ServiceCoreValues from "../../components/layouts/services/ServiceCoreValues";
 import ServiceOverview from "../../components/layouts/services/ServiceOverview";
+import ServiceOurProcess from "../../components/layouts/services/ServiceOurProcess";
+import ServiceWhyChooseUs from "../../components/layouts/services/ServiceWhyChooseUs";
+import ServiceMarketingBanner from "../../components/layouts/services/ServiceMarketingBanner";
 
 const ServicePageTemplate = () => {
 
-  console.log("Service Page Template Render!");
-
   //Store the Slug(Params) to variable serviceSlug.
   const {serviceSlug} = useParams(); // returns an object
-  console.log(serviceSlug);
 
   //Find the serviceData base on the current slug.
-  const selectedService = Object.values(servicesData).find(serviceItem => serviceItem.slug === serviceSlug);
+  const selectedService = Object.values(ServicesData).find(serviceItem => serviceItem.slug === serviceSlug);
   
   //Check if the slug do not exist from the serviceData.jsx return 404 page.
   if(!selectedService) {
@@ -26,6 +25,9 @@ const ServicePageTemplate = () => {
       <ServiceHero {...selectedService.hero}/>
       <ServiceCoreValues coreValues={selectedService.coreValues} />
       <ServiceOverview overView={selectedService.overView}/>
+      <ServiceOurProcess process={selectedService.process}/>
+      <ServiceWhyChooseUs whyChooseUs={selectedService.whyChooseUs} />
+      <ServiceMarketingBanner marketingBanner={selectedService.marketingBanner} />
     </div>
     
   )
