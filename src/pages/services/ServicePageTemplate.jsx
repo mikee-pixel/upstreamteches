@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ServicesData from "./servicesData";
+import ServicesData from "./ServicesData";
 import ServiceHero from "../../components/layouts/services/ServiceHero";
 import ServiceCoreValues from "../../components/layouts/services/ServiceCoreValues";
 import ServiceOverview from "../../components/layouts/services/ServiceOverview";
