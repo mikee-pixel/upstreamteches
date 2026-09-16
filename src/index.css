@@ -940,7 +940,7 @@ input:-webkit-autofill:active {
   top: 0%;
   right: 0;
   /* transform: translate(200%, 0%);  <-- Changes to Fix the Mobile Menu*/
-  transform: translateX(100%);
+  transform: translateX(150%);
   width: 60%;
   /* height: 100vh; <-- Changes to Fix the Mobile Menu */
   height: 100vh;
