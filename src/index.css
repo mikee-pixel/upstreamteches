@@ -873,8 +873,8 @@ input:-webkit-autofill:active {
 }
 
 .header-menu .branding-logo img {
-  width: 80%;
-  height: auto;
+  /* width: 80%;
+  height: auto; */
 }
 
 /*Desktop Header Menu*/

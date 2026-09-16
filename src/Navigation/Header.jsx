@@ -77,10 +77,7 @@ const Header = () => {
     if(!menuSlideOutStatus) return;
     const handleSlideOutMenu = (e) => {
       if(!mobileMenu.current.contains(e.target)) {
-        console.log("Clicked outside the slide menu!");
         setMenuSlideOutStatus(false);
-      } else {
-        console.log("Clicked inside the slide menu");
       }
     }
     document.addEventListener("click", handleSlideOutMenu);
@@ -103,6 +100,7 @@ const Header = () => {
             <img
               src="/images/upstreamteches-branding-logo-transparent-bg.png"
               alt="upstream branding logo"
+            className="h-auto w-[80%] sm:w-[40%] md:w-[100%] xl:w-[80%]"
             />
           </Link>
         </div>
