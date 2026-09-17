@@ -14,7 +14,7 @@ const ServicePageTemplate = () => {
 
   //Find the serviceData base on the current slug.
   const selectedService = Object.values(ServicesData).find(serviceItem => serviceItem.slug === serviceSlug);
-  
+
   //Check if the slug do not exist from the serviceData.jsx return 404 page.
   if(!selectedService) {
     return <div>404 Not Found</div>
@@ -25,7 +25,8 @@ const ServicePageTemplate = () => {
       <ServiceHero {...selectedService.hero}/>
       <ServiceCoreValues coreValues={selectedService.coreValues} />
       <ServiceOverview overView={selectedService.overView}/>
-      <ServiceOurProcess process={selectedService.process}/>
+      {selectedService.process && <ServiceOurProcess process={selectedService.process}/>}
+      {/* <ServiceOurProcess process={selectedService.process}/> */}
       <ServiceWhyChooseUs whyChooseUs={selectedService.whyChooseUs} />
       <ServiceMarketingBanner marketingBanner={selectedService.marketingBanner} />
     </div>

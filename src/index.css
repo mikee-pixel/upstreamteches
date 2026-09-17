@@ -786,6 +786,7 @@ input:-webkit-autofill:active {
 
 .faq-container .faq-item .faq-question svg {
   stroke: var(--primary-color);
+  margin-left: 15px;
 }
 
 .faq-container .faq-item .faq-answer {

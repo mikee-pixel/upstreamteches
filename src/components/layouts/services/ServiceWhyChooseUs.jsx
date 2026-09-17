@@ -13,7 +13,7 @@ const ServiceWhyChooseUs = ({whyChooseUs}) => {
         <SectionLayout class_name={"why-choose-us"}>
             <div className="row flex flex-col lg:flex-row gap-10 pt-40">
                 <div className={`col col1 w-full lg:w-[50%] ${col1Animation ? 'slide-left--active' : 'slide-left--disabled'}`} ref={col1}>
-                    <img src="/images/A man focused on his work, using a laptop and an external keyboard at a desk.png" alt="A man focused on his work, using a laptop and an external keyboard at a desk" />
+                    <img src={whyChooseUs.featuredImage} alt={whyChooseUs.altImg}/>
                 </div>
                 <div className={`col col2 flex flex-col gap-5 w-full lg:w-[50%] ${col2Animation ? 'slide-right--active' : 'slide-right--disabled'}`} ref={col2}>
                     <h6 className="gradient-text subheading-text">{whyChooseUs.preheader}</h6>
