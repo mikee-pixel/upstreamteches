@@ -65,8 +65,8 @@ const Homepage = () => {
             className={`col col2 w-full lg:w-[50%] ${heroCol2Animation ? "scale-up--active" : "scale-up--disabled"}`} ref={heroCol2}
           >
             <img
-              src="/images/Isometric illustration depicting individuals collaborating on computers_transprent.png"
-              alt="Isometric illustration depicting individuals collaborating on computers"
+              src="/images/A graphic illustrating digital solutions designed to enhance business growth and efficiency through technology.png"
+              alt="A graphic illustrating digital solutions designed to enhance business growth and efficiency through technology"
             />
           </div>
         </div>

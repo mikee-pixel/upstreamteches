@@ -49,8 +49,8 @@ const OurServices = () => {
             <div className="img-container">
               <img
                 className="hero-banner-image"
-                src="/images/Laptop with data analysis for leads, revenue, and conversation.png"
-                alt="Laptop with data analysis for leads, revenue, and conversation"
+                src="/images/Laptop surrounded by icons and text boxes highlighting website development.png"
+                alt="Laptop surrounded by icons and text boxes highlighting website development"
               />
             </div>
           </div>

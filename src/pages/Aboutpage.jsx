@@ -75,8 +75,8 @@ const Aboutpage = () => {
               </div>
               <img
                 className="hero-banner-image"
-                src="/images/A group of diverse business professionals gathered around a laptop.png"
-                alt="A group of diverse business professionals gathered around a laptop"
+                src="/images/A diverse group of individuals collaborating on a laptop.png"
+                alt="A diverse group of individuals collaborating on a laptop"
               />
             </div>
             <div className="floating-content growth-driven-container">

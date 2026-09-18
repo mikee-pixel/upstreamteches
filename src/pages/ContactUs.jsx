@@ -33,8 +33,8 @@ const ContactUs = () => {
                         <div className="img-container">
                             <img
                                 className="hero-banner-image"
-                                src="/images/A group of business professionals collaborating around a table.png"
-                                alt="A group of business professionals collaborating around a table"
+                                src="/images/Woman in a headset smiles at a laptop.png"
+                                alt="Woman in a headset smiles at a laptop"
                             />
                         </div>
                     </div>
