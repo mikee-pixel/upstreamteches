@@ -1,4 +1,4 @@
-import { Presentation, Component, CodeXml, BugPlay, Rocket, ServerCog, Puzzle, Gauge, Award, MoveRight, PackageSearch, ShoppingCart } from "lucide-react";
+import { Presentation, Component, CodeXml, BugPlay, Rocket, ServerCog, Puzzle, Gauge, Award, MoveRight, PackageSearch, ShoppingCart, FileSearchCorner, ChartPie, ChartNoAxesCombined, Brain, Eye, Link, MapPinHouse, Layers2, FileKey, Shapes, Sparkle, PenTool, FileImage, TicketSlash, PackageOpen, Rotate3D, Target, FastForward } from "lucide-react";
 
 
 const ServicesData = {
@@ -160,7 +160,7 @@ const ServicesData = {
       title: "Let’s Elevate Your Business With a Powerful Online Presence",
       btnLabel: "Get Started Today",
       btnIcon: <MoveRight />,
-      btnLink: "/contact/#get-in-touch"
+      btnLink: "/contact-us/#get-in-touch"
     }
   },
   eCommerce: {
@@ -321,7 +321,329 @@ const ServicesData = {
       title: "Let’s Build a High-Converting Online Store for Your Business",
       btnLabel: "Get Started Today",
       btnIcon: <MoveRight />,
-      btnLink: "/contact/#get-in-touch"
+      btnLink: "/contact-us/#get-in-touch"
+    }
+  },
+  seo: {
+    slug: "seo",
+    hero: {
+      preheader: "Dominate Search Engine Rankings",
+      title: "Search Engine Optimization Services",
+      subheader:
+        "We build data-driven SEO strategies that elevate your search visibility, drive qualified organic traffic, and turn search rankings into predictable revenue.",
+      primary_btn_label: "Get Free SEO Audit",
+      primary_btn_link: "/contact-us/",
+
+      hero_img:
+        "/images/A digital marketing team in Delhi discussing SEO strategies with charts and graphs displayed on a laptop screen.png",
+      hero_alt_img:
+        "A digital marketing team in Delhi discussing SEO strategies with charts and graphs displayed on a laptop screen",
+    },
+    coreValues: {
+      coreValue1: {
+        id: 1,
+        featuredIcon: "/images/high intent keywords icon.png",
+        title: "High-Intent Keywords",
+      },
+      coreValue2: {
+        id: 2,
+        featuredIcon: "/images/technical seo audits icon.png",
+        title: "Technical SEO Audits",
+      },
+      coreValue3: {
+        id: 3,
+        featuredIcon: "/images/on page optimization icon.png",
+        title: "On-Page Optimization",
+      },
+      coreValue4: {
+        id: 4,
+        featuredIcon: "/images/content strategy icon.png",
+        title: "Content Strategy",
+      },
+      coreValue5: {
+        id: 5,
+        featuredIcon: "/images/local seo visibility icon.png",
+        title: "Local SEO Visibility",
+      },
+      coreValue6: {
+        id: 6,
+        featuredIcon: "/images/transparent analytics icon.png",
+        title: "Transparent Analytics",
+      },
+    },
+    overView: {
+      col1: {
+        preheader: "Overview",
+        title: "Be Found by Customers Who Are Ready to Buy",
+        subheader:
+          "Appearing on page one of Google isn't about luck—it's about strategy. We optimize your entire digital footprint so high-value searchers find your business ahead of your competitors, creating a reliable pipeline of organic leads.",
+        checkList: [
+          "Higher rankings on Google for commercial-intent keywords",
+          "Continuous growth in sustainable, non-paid website traffic",
+          "Technical site fixes that improve user experience and indexing",
+          "Optimized Google Business Profile for dominant local search visibility",
+          "Clear, transparent reporting that tracks keyword positions and conversions",
+        ],
+      },
+      col2: {
+        featuredImage:
+          "/images/A computer screen displaying a search engine results page focused on search engine optimization strategies and tips.png",
+        altImg:
+          "A computer screen displaying a search engine results page focused on search engine optimization strategies and tips",
+      },
+      blurbImageWidget: {
+        title:
+          "Struggling to Rank on Google? Let's uncover your website's hidden ranking potential!",
+        buttonLink: "/contact-us",
+        buttonLabel: "Let's Get Started",
+      },
+    },
+    process: {
+      preheader: "What We Deliver",
+      title: "Comprehensive SEO Solutions That Scale Your Reach",
+      subheader1:
+        "At UpstreamTeches, we don't rely on shortcuts or risky tactics. We execute a balanced, multi-faceted SEO strategy designed to align with search engine algorithms and build lasting domain authority for your brand.",
+      subheader2:
+        "",
+      workflowProcess: [
+        {
+          id: 1,
+          icon: <Brain />,
+          title: "Technical SEO",
+          description:
+            "Site speed enhancement, schema markup, mobile optimization, and crawl error fixes.",
+        },
+        {
+          id: 2,
+          icon: <Eye />,
+          title: "Keyword Research",
+          description:
+            "In-depth mapping of high-volume, commercial search terms your buyers use.",
+        },
+        {
+          id: 3,
+          icon: <Layers2 />,
+          title: "On-Page Optimization",
+          description:
+            "Strategic refinement of title tags, meta descriptions, headings, and internal links.",
+        },
+        {
+          id: 4,
+          icon: <FileKey />,
+          title: "Content Strategy",
+          description:
+            "Creating authoritative, keyword-targeted content that answers buyer queries and ranks fast.",
+        },
+        {
+          id: 5,
+          icon: <Link />,
+          title: "Authority & Backlinks",
+          description: "High-quality outreach strategies to build domain trust and search credibility.",
+        },
+        {
+          id: 6,
+          icon: <MapPinHouse />,
+          title: "Local SEO Optimization",
+          description:
+            "Local map pack domination and citation consistency for nearby customer search.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      preheader: "Why Choose Us",
+      title: "Sustainable Rankings. Transparent Growth.",
+      subheader: "We eliminate the mystery from SEO with straightforward execution, clear communication, and tracking focused on actual ROI rather than vanity metrics.",
+      iconWidgets: [
+        {
+          id: 1,
+          featuredIcon: <FileSearchCorner />,
+          title: "White-Hat Strategies",
+          detail: "Clean, ethical search engine techniques built for stable, long-term search rankings.",
+        },
+        {
+          id: 2,
+          featuredIcon: <ChartPie />,
+          title: "Data-Driven Approach",
+          detail: "Constant tracking, keyword monitoring, and campaign adjustments guided by real analytics.",
+        },
+        {
+          id: 3,
+          featuredIcon: <ChartNoAxesCombined />,
+          title: "Dedicated Reporting",
+          detail: "Easy-to-understand monthly performance dashboards that highlight rankings, traffic, and leads.",
+        }
+      ],
+      featuredImage: "/images/A vibrant infographic illustrating the growth of digital marketing in India, featuring statistics and key trends..png",
+      altImg: "A vibrant infographic illustrating the growth of digital marketing in India, featuring statistics and key trends.",
+    },
+    marketingBanner: {
+      icon: <Rocket />,
+      preheader: "Ready to Climb to Page One?",
+      title: "Let’s Transform Your Search Visibility into Business Growth",
+      btnLabel: "Claim Your Free Audit",
+      btnIcon: <MoveRight />,
+      btnLink: "/contact-us/#get-in-touch"
+    }
+  },
+  graphicsDesign: {
+    slug: "graphic-design",
+    hero: {
+      preheader: "Visual Marketing That Captivates",
+      title: "Professional Graphic Design Services",
+      subheader:
+        "We craft compelling visual assets and brand identities that capture attention, communicate value, and turn viewers into paying customers.",
+      primary_btn_label: "Get Free Design Consultation",
+      primary_btn_link: "/contact-us/",
+
+      hero_img:
+        "/images/A designer working on a website layout, with a computer screen displaying code and design elements.png",
+      hero_alt_img:
+        "A designer working on a website layout, with a computer screen displaying code and design elements",
+    },
+    coreValues: {
+      coreValue1: {
+        id: 1,
+        featuredIcon: "/images/custom brand identity icon.png",
+        title: "Custom Brand Identity",
+      },
+      coreValue2: {
+        id: 2,
+        featuredIcon: "/images/high quality ad creatives icon.png",
+        title: "High-Converting Ad Creatives",
+      },
+      coreValue3: {
+        id: 3,
+        featuredIcon: "/images/social media graphics icon.png",
+        title: "Social Media Graphics",
+      },
+      coreValue4: {
+        id: 4,
+        featuredIcon: "/images/vector and print ready icon.png",
+        title: "Vector & Print Ready",
+      },
+      coreValue5: {
+        id: 5,
+        featuredIcon: "/images/fast turnaround icon.png",
+        title: "Fast Turnaround Times",
+      },
+      coreValue6: {
+        id: 6,
+        featuredIcon: "/images/unlimited brand revisions icon.png",
+        title: "Unlimited Brand Revisions",
+      },
+    },
+    overView: {
+      col1: {
+        preheader: "Overview",
+        title: "Stand Out in a Crowded Digital Market",
+        subheader:
+          "Great graphic design does more than just look good—it builds trust and drives business decisions. We design strategic visual assets tailored to your market, ensuring every ad, post, and branding element works to grow your bottom line.",
+        checkList: [
+          "Modern visual identity that sets your brand apart from competitors",
+          "Scroll-stopping ad creatives built specifically to increase click-through rates",
+          "Consistent visual branding across all digital and print touchpoints",
+          "Clean, professional marketing collateral that builds instant credibility",
+          "Dedicated design support that delivers assets on time, every time",
+        ],
+      },
+      col2: {
+        featuredImage:
+          "/images/A woman wearing headphones is focused on her work at a computer.png",
+        altImg:
+          "A woman wearing headphones is focused on her work at a computer",
+      },
+      blurbImageWidget: {
+        title:
+          "Need Eye-Catching Visuals? Let’s create stunning designs that elevate your brand image today!",
+        buttonLink: "/contact-us",
+        buttonLabel: "Let's Get Started",
+      },
+    },
+    process: {
+      preheader: "What We Deliver",
+      title: "Strategic Design Solutions Engineered for Results",
+      subheader1:
+        "At UpstreamTeches, our design process combines creative artistic execution with marketing psychology. We deliver pixel-perfect visuals that reflect your brand’s core message and engage your target audience.",
+      subheader2:
+        "",
+      workflowProcess: [
+        {
+          id: 1,
+          icon: <Shapes />,
+          title: "Brand Identity Design",
+          description:
+            "Custom logo creation, color palettes, typography, and comprehensive brand style guides.",
+        },
+        {
+          id: 2,
+          icon: <Sparkle />,
+          title: "High-Converting Ad Creatives",
+          description:
+            "Eye-catching graphics designed specifically for Google, Meta, and social ad campaigns.",
+        },
+        {
+          id: 3,
+          icon: <FileImage />,
+          title: "Social Media Assets",
+          description:
+            "Branded templates, post graphics, banners, and story visuals that build active engagement.",
+        },
+        {
+          id: 4,
+          icon: <TicketSlash />,
+          title: "Marketing Collateral",
+          description:
+            "Professional brochures, flyers, pitch decks, business cards, and promotional materials.",
+        },
+        {
+          id: 5,
+          icon: <PenTool />,
+          title: "Website & UI Graphics",
+          description: "Custom icons, banners, and visual elements that enhance your web user experience.",
+        },
+        {
+          id: 6,
+          icon: <PackageOpen />,
+          title: "Packaging & Label Design",
+          description:
+            "Retail-ready print packaging design that stands out on shelves and online stores.",
+        },
+      ],
+    },
+    whyChooseUs: {
+      preheader: "Why Choose Us",
+      title: "Creative Vision. Marketing Impact.",
+      subheader: "We align graphic design directly with your marketing strategy, creating visual collateral engineered to support traffic, lead generation, and sales goals.",
+      iconWidgets: [
+        {
+          id: 1,
+          featuredIcon: <Rotate3D />,
+          title: "Marketing-Driven Creativity",
+          detail: "Designs built with conversion principles, visual hierarchy, and buyer psychology in mind.",
+        },
+        {
+          id: 2,
+          featuredIcon: <Target />,
+          title: "Brand Consistency",
+          detail: "We ensure every visual asset adheres strictly to your brand guidelines for a polished online presence.",
+        },
+        {
+          id: 3,
+          featuredIcon: <FastForward />,
+          title: "Scalable Production",
+          detail: "Fast turnaround times and flexible design workflows that support your ongoing campaign needs.",
+        }
+      ],
+      featuredImage: "/images/A man focused on his computer screen, creating graphic designs in a modern workspace.png",
+      altImg: "A man focused on his computer screen, creating graphic designs in a modern workspace",
+    },
+    marketingBanner: {
+      icon: <Rocket />,
+      preheader: "Ready to Transform Your Visual Brand?",
+      title: "Let’s Build a Powerful Visual Identity That Drives Results",
+      btnLabel: "Get Started Today",
+      btnIcon: <MoveRight />,
+      btnLink: "/contact-us/#get-in-touch"
     }
   }
 };

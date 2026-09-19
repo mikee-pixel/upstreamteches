@@ -2569,6 +2569,10 @@ input:-webkit-autofill:active {
   background-color: var(--tertiary-color);
 }
 
+.service-marketing-banner .row > * {
+  z-index: 1;
+}
+
 .service-marketing-banner .row::before {
   
   content: "";
@@ -2587,6 +2591,8 @@ input:-webkit-autofill:active {
     );
 
   background-size: 50px 50px;
+
+  z-index: 0;
 }
 
 .service-marketing-banner .row .col1 .marketing-blurb-icon .marketing-icon {
