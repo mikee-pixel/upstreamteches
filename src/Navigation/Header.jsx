@@ -11,11 +11,17 @@ import {
   Mail,
   PhoneCall,
   CircleArrowRight,
-  MapPin
+  MapPin,
+  ChevronDown,
+  CodeXml,
+  ShoppingBasket,
+  PenTool,
+  ChevronUp
 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 import { useLocation } from "react-router-dom";
+import BlurbImageWidget from "../components/ui/BlurbImageWidget";
 
 const Header = () => {
 
@@ -25,8 +31,7 @@ const Header = () => {
   const [menuSlideOutStatus, setMenuSlideOutStatus] = useState(false);
   const mobileMenu = useRef(null);
   const currentLoc = useLocation();
-  // const [backdropFilterActive, setBackdropFilterActive] = useState(false);
-
+  const [isServiceMenuDropdown, setIsServiceMenuDropdow] = useState(false);
   
   //Set Header Menu Sticky and Backdrop Filter
   useEffect(() => {
@@ -89,10 +94,8 @@ const Header = () => {
 
   return (
     <SectionLayout
-      class_name={`header-menu ${stickyHeader ? "sticky--active" : ""}`}
-    >
-      <div
-        className={`row flex flex-row justify-between items-center w-full gap-10 xl:gap-30 py-5 ${headerMenuElementAnimation ? "slide-down--active" : "slide-down--disabled"}`}
+      class_name={`header-menu ${stickyHeader ? "sticky--active" : ""}`}>
+      <div className={`row flex flex-row justify-between items-center w-full gap-10 xl:gap-30 py-5 ${headerMenuElementAnimation ? "slide-down--active" : "slide-down--disabled"}`}
         ref={headerMenuRefs}
       >
         <div className="inner-con branding-logo w-[50%] md:w-[20%]">
@@ -105,19 +108,68 @@ const Header = () => {
           </Link>
         </div>
         <div className="inner-con main-header-menu-container flex justify-end w-[50%] md:w-[80%]">
-          <div className="desktop-header-menu-container flex flex-row gap-10">
+          <div className="desktop-header-menu-container flex flex-row items-center gap-10">
             <ul className="flex flex-row md:gap-3 lg:gap-10 items-center align-middle">
               <li className="menu-item">
-                <Link to="/">Home</Link>
+                <Link to="/" className="primary-tab">Home</Link>
               </li>
               <li className="menu-item">
-                <Link to="/about-us">About Us</Link>
+                <Link to="/about-us" className="primary-tab">About Us</Link>
               </li>
               <li className="menu-item">
-                <Link to="/services">Services</Link>
+                <Link to="/services" className="flex flex-row flex-nowrap align-middle gap-3 primary-tab">Services <ChevronDown /></Link>
+                {/*Desktop Submenu */}
+                <div className="submenu-container">
+                  <ul>
+                    <li className="submenu-item">
+                      <Link to="/services/website-development">
+                        <BlurbImageWidget 
+                          id={1}
+                          is_icon_type_img={false}
+                          featured_icon={<CodeXml />}
+                          title={"Website Development"}
+                          excerpt={"Custom, responsive websites for your business."}
+                        />
+                      </Link>
+                    </li>
+                    <li className="submenu-item">
+                      <Link to="/services/e-commerce">
+                        <BlurbImageWidget 
+                          id={2}
+                          is_icon_type_img={false}
+                          featured_icon={<ShoppingBasket />}
+                          title={"E-Commerce"}
+                          excerpt={"Sell online with a secure and scalable store."}
+                        />
+                      </Link>
+                    </li>
+                    <li className="submenu-item">
+                      <Link to="/services/seo">
+                        <BlurbImageWidget 
+                          id={3}
+                          is_icon_type_img={false}
+                          featured_icon={<CodeXml />}
+                          title={"SEO"}
+                          excerpt={"Rank higher and get more organic traffic."}
+                        />
+                      </Link>
+                    </li>
+                    <li className="submenu-item">
+                      <Link to="/services/graphic-design">
+                        <BlurbImageWidget 
+                          id={4}
+                          is_icon_type_img={false}
+                          featured_icon={<PenTool />}
+                          title={"Graphics Design"}
+                          excerpt={"Eye-catching visuals for your brand."}
+                        />
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className="menu-item">
-                <Link to="/contact-us">Contact Us</Link>
+                <Link to="/contact-us" className="primary-tab">Contact Us</Link>
               </li>
             </ul>
 
@@ -145,29 +197,84 @@ const Header = () => {
               <div className="row2 pt-5">
                 <div className="main-menu-mobile">
                   <ul className="flex flex-col">
-                    <li
-                      className="menu-item"
-                      onClick={() => setMenuSlideOutStatus(false)}
-                    >
-                      <NavLink to="/" className="flex flex-row align-middle">
+                    <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                      <NavLink to="/" className="primary-menu flex flex-row align-middle">
                         <House /> Home
                       </NavLink>
                     </li>
-                    <li
-                      className="menu-item"
-                      onClick={() => setMenuSlideOutStatus(false)}
-                    >
-                      <NavLink to="/about-us/" className="flex flex-row align-middle">
+                    <li className="menu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                      <NavLink to="/about-us/" className="primary-menu flex flex-row align-middle">
                         <Info /> About Us
                       </NavLink>
                     </li>
-                    <li
-                      className="menu-item"
-                      onClick={() => setMenuSlideOutStatus(false)}
-                    >
-                      <NavLink to="/services/" className="flex flex-row align-middle">
-                        <BriefcaseBusiness /> Services
+
+
+                    
+                    {/* Services For Mobile */}
+                    <li className="menu-item">
+                      <NavLink to="/services/" className="primary-menu flex flex-row align-middle">
+                        <div className="has_submenu flex flex-row justify-between items-center w-full">
+                          <div className="flex flex-row align-middle">
+                            <BriefcaseBusiness /> Services
+                          </div>
+                          <button className="w-7 sm:w-10 h-7 sm:h-10 stroke-white" onClick={() => {setIsServiceMenuDropdow(prev => !prev)}}> 
+                             <ChevronDown />
+                            {/* {isServiceMenuDropdown ? <ChevronUp /> : <ChevronDown />} */}
+                          </button>
+                        </div>
                       </NavLink>
+                        
+                    
+    
+                      {/*Mobile Submenu */}
+                      <div className={`submenu-container ${isServiceMenuDropdown ? 'active' : ''}`}>
+                        <ul>
+                          <li className="submenu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                            <NavLink to="/services/website-development">
+                              <BlurbImageWidget 
+                                id={1}
+                                is_icon_type_img={false}
+                                featured_icon={<CodeXml />}
+                                title={"Website Development"}
+                                // excerpt={"Custom, responsive websites for your business."}
+                              />
+                            </NavLink>
+                          </li>
+                          <li className="submenu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                            <NavLink to="/services/e-commerce">
+                              <BlurbImageWidget 
+                                id={2}
+                                is_icon_type_img={false}
+                                featured_icon={<ShoppingBasket />}
+                                title={"E-Commerce"}
+                                // excerpt={"Sell online with a secure and scalable store."}
+                              />
+                            </NavLink>
+                          </li>
+                          <li className="submenu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                            <NavLink to="/services/seo">
+                              <BlurbImageWidget 
+                                id={3}
+                                is_icon_type_img={false}
+                                featured_icon={<CodeXml />}
+                                title={"SEO"}
+                                // excerpt={"Rank higher and get more organic traffic."}
+                              />
+                            </NavLink>
+                          </li>
+                          <li className="submenu-item" onClick={() => setMenuSlideOutStatus(false)}>
+                            <NavLink to="/services/graphic-design">
+                              <BlurbImageWidget 
+                                id={4}
+                                is_icon_type_img={false}
+                                featured_icon={<PenTool />}
+                                title={"Graphics Design"}
+                                // excerpt={"Eye-catching visuals for your brand."}
+                              />
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
                     <li
                       className="menu-item"
@@ -175,7 +282,7 @@ const Header = () => {
                     >
                       <NavLink
                         to="/contact-us/"
-                        className="flex flex-row align-middle"
+                        className="primary-menu flex flex-row align-middle"
                       >
                         <Send /> Contact Us
                       </NavLink>

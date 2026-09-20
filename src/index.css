@@ -848,12 +848,7 @@ input:-webkit-autofill:active {
   border-radius: 20px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   position: relative;
-  overflow: hidden;
-}
-
-.header-menu .row > * {
-  /* position: relative;
-  z-index: 1; */
+  /* overflow: hidden; */
 }
 
 /* Add backdrop and background color to header row */
@@ -866,6 +861,7 @@ input:-webkit-autofill:active {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   z-index: 0;
+  border-radius: 20px;
 }
 
 .header-menu .branding-logo {
@@ -873,12 +869,11 @@ input:-webkit-autofill:active {
   z-index: 1;
 }
 
-.header-menu .branding-logo img {
-  /* width: 80%;
-  height: auto; */
+/*Desktop Header Menu*/
+.header-menu .desktop-header-menu-container ul li.menu-item {
+  padding: 35px 0;
 }
 
-/*Desktop Header Menu*/
 .header-menu .desktop-header-menu-container ul li a {
   font-weight: 600;
   font-family: var(--text-font-style);
@@ -886,7 +881,7 @@ input:-webkit-autofill:active {
   font-size: 18px;
 }
 
-.header-menu .desktop-header-menu-container ul li a::before {
+.header-menu .desktop-header-menu-container ul li.menu-item a.primary-tab::before {
   content: "";
   position: absolute;
   bottom: -12px;
@@ -895,7 +890,7 @@ input:-webkit-autofill:active {
   background-color: var(--primary-color);
 }
 
-.header-menu .desktop-header-menu-container ul li a:hover::before {
+.header-menu .desktop-header-menu-container ul li.menu-item a.primary-tab:hover::before {
   animation: menu-border-bottom-animation 0.5s ease-in-out forwards;
 }
 
@@ -909,6 +904,66 @@ input:-webkit-autofill:active {
   }
 }
 
+/* Desktop Sub Menus */
+
+.header-menu .desktop-header-menu-container ul li {
+  position: relative;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(90px);
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: var(--box-shadow);
+  display: none;
+}
+
+.header-menu .desktop-header-menu-container ul li:hover .submenu-container {
+  display: block;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item {
+  grid-template-columns: auto auto;
+  row-gap: 5px;
+  column-gap: 30px;
+  padding: 10px !important;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container {
+  position: relative;
+  grid-row: 1 / span 2;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(46, 175, 157, 0.1);
+  left: 0%;
+  top: 0%;
+  border-radius: 10px;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container svg { 
+  stroke: var(--primary-color);
+  margin: 8px 0 0 8px;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item .blurb-title-container {
+  font-size: 17px;
+}
+
+.header-menu .desktop-header-menu-container ul li .submenu-container .blurb-item .blurb-content-container p  {
+  font-size: 16px;
+}
+
+/* Set Hidden Mobile Container */
 .header-menu .mobile-header-menu-container {
   display: none;
 }
@@ -940,10 +995,8 @@ input:-webkit-autofill:active {
   position: fixed;
   top: 0%;
   right: 0;
-  /* transform: translate(200%, 0%);  <-- Changes to Fix the Mobile Menu*/
   transform: translateX(150%);
   width: 60%;
-  /* height: 100vh; <-- Changes to Fix the Mobile Menu */
   height: 100vh;
   height: 100dvh;
   background-color: var(--heading-text);
@@ -968,8 +1021,12 @@ input:-webkit-autofill:active {
   color: var(--color-white);
   font-size: 20px;
   font-family: var(--heading-font-style);
-  padding: 25px 20px;
+  
   border-radius: 10px;
+}
+
+.mobile-menu-container .row2 .main-menu-mobile .menu-item a.primary-menu {
+  padding: 25px 20px;
 }
 
 .mobile-menu-container .row2 .main-menu-mobile .menu-item a.active {
@@ -1056,12 +1113,63 @@ input:-webkit-autofill:active {
 
   .mobile-menu-container .row2 .main-menu-mobile .menu-item a {
     font-size: 16px;
+    
+  }
+
+  .mobile-menu-container .row2 .main-menu-mobile .menu-item a.primary-menu {
     padding: 20px 20px;
   }
 
   .mobile-menu-container .row3 .contact-details-container p {
     font-size: 16px;
   }
+}
+
+/* Mobile Sub Menus */
+
+ .header-menu .mobile-header-menu-container ul li {
+  position: relative;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container {
+  margin-left: 30px;
+  opacity: 0;
+  height: 0;
+  transition: height 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container.active {
+  opacity: 1;
+  height: auto;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container ul li {
+  padding: 5px 0;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item {
+  grid-template-columns: auto auto;
+  row-gap: 5px;
+  column-gap: 10px;
+  padding: 10px !important;
+  justify-content: flex-start;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container {
+  position: relative;
+  grid-row: 1 / span 2;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container svg { 
+  stroke: var(--primary-color);
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-title-container {
+  font-size: 17px;
+}
+
+.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-content-container p  {
+  font-size: 16px;
 }
 
 /*FOOTER MENU*/
