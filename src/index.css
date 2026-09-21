@@ -1127,27 +1127,31 @@ input:-webkit-autofill:active {
 
 /* Mobile Sub Menus */
 
- .header-menu .mobile-header-menu-container ul li {
+.header-menu .mobile-header-menu-container ul li {
   position: relative;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container {
+/* Collapse Height */
+.header-menu .mobile-header-menu-container .submenu-container {
   margin-left: 30px;
-  opacity: 0;
-  height: 0;
-  transition: height 1s ease-in-out, opacity 1s ease-in-out;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 1s ease-in-out;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container.active {
-  opacity: 1;
-  height: auto;
+.header-menu .mobile-header-menu-container .submenu-container.active {
+  grid-template-rows: 1fr;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container ul li {
+.header-menu .mobile-header-menu-container .submenu-container ul {
+  overflow: hidden;
+}
+
+.header-menu .mobile-header-menu-container .submenu-container ul li {
   padding: 5px 0;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item {
+.header-menu .mobile-header-menu-container .submenu-container .blurb-item {
   grid-template-columns: auto auto;
   row-gap: 5px;
   column-gap: 10px;
@@ -1155,20 +1159,20 @@ input:-webkit-autofill:active {
   justify-content: flex-start;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container {
+.header-menu .mobile-header-menu-container .submenu-container .blurb-item .blurb-image-container {
   position: relative;
   grid-row: 1 / span 2;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-image-container svg { 
+.header-menu .mobile-header-menu-container .submenu-container .blurb-item .blurb-image-container svg { 
   stroke: var(--primary-color);
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-title-container {
+.header-menu .mobile-header-menu-container .submenu-container .blurb-item .blurb-title-container {
   font-size: 17px;
 }
 
-.header-menu .mobile-header-menu-container ul li .submenu-container .blurb-item .blurb-content-container p  {
+.header-menu .mobile-header-menu-container .submenu-container .blurb-item .blurb-content-container p  {
   font-size: 16px;
 }
 
