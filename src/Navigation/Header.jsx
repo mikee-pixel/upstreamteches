@@ -212,7 +212,7 @@ const Header = () => {
                     <li className="menu-item">
                       <NavLink to="/services/" className="primary-menu flex flex-row align-middle">
                         <div className="has_submenu flex flex-row justify-between items-center w-full">
-                          <div className="flex flex-row align-middle">
+                          <div className="flex flex-row align-middle"  onClick={() => setMenuSlideOutStatus(false)}>
                             <BriefcaseBusiness /> Services
                           </div>
                           <button className="w-7 sm:w-10 h-7 sm:h-10 stroke-white" onClick={() => {setIsServiceMenuDropdow(prev => !prev)}}> 
