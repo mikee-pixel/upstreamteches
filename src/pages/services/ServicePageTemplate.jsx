@@ -6,6 +6,7 @@ import ServiceOverview from "../../components/layouts/services/ServiceOverview";
 import ServiceOurProcess from "../../components/layouts/services/ServiceOurProcess";
 import ServiceWhyChooseUs from "../../components/layouts/services/ServiceWhyChooseUs";
 import ServiceMarketingBanner from "../../components/layouts/services/ServiceMarketingBanner";
+import PageNotFound from "../PageNotFound";
 
 const ServicePageTemplate = () => {
 
@@ -17,7 +18,7 @@ const ServicePageTemplate = () => {
 
   //Check if the slug do not exist from the serviceData.jsx return 404 page.
   if(!selectedService) {
-    return <div>404 Not Found</div>
+    return <PageNotFound />
   }
 
   return (
