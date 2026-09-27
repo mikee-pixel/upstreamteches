@@ -7,6 +7,7 @@ import MainNavigation from "./Navigation/MainNavigation";
 // import WebsiteDevelopment from "./pages/services/WebsiteDevelopment";
 import ServicePageTemplate from "./pages/services/ServicePageTemplate";
 import PageNotFound from "./pages/PageNotFound";
+import PortfolioPage from "./pages/PortfolioPage";
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
         <Route path="/about-us" element={<Aboutpage />}/>
         <Route path="/contact-us" element={<ContactUs />}/>
         <Route path="/services" element={<OurServices />}/>
-        <Route path="/services/:serviceSlug" element={<ServicePageTemplate />} />\
+        <Route path="/services/:serviceSlug" element={<ServicePageTemplate />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
         
         {/* Catch all 404 Route or Pags */}
         <Route path="*" element={<PageNotFound />}/>

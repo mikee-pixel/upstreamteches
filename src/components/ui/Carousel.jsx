@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 
 const Carousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({loop: false}, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({loop: true}, [Autoplay()]);
 
   useEffect(() => {
     if(!emblaApi) return;

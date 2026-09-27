@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import useCounter from "../customhooks/useCounter";
 import ClientLogoCaraousel from "../components/ui/ClientsLogoCarousel";
+// import PortfolioData from "../data/PortfolioData";
+import Portfolio from "../components/ui/Portfolio";
 
 const Homepage = () => {
   
@@ -29,6 +31,10 @@ const Homepage = () => {
   const { targetElement: quickInfoContainer, activeAnimation: quickInfoAnimation } = useEntranceAnimation();
   const { targetElement: marketingBannerCol1, activeAnimation: marketingBannerCol1Animation } = useEntranceAnimation();
   const { targetElement: marketingBannerCol2, activeAnimation: marketingBannerCol2Animation } = useEntranceAnimation(200);
+
+  //Portfolio Data
+  // const portfolioData = Object.values(PortfolioData);
+  
 
   return (
     <div id="homepage">
@@ -151,6 +157,10 @@ const Homepage = () => {
         </div>
       </SectionLayout>
 
+      <Portfolio 
+        preHeader={"Featured Projects"} 
+        title={<h2 className="text-center">Real Websites. <span className="text-(--primary-color)">Real Growth.</span></h2>} 
+        subHeader={"A look at some of the businesses we've helped grow through strategic design, development, and digital marketing solutions."}/>
       <SectionLayout class_name="marketing-banner">
         <div
           className="row flex flex-col w-full mt-30"

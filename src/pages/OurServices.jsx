@@ -95,7 +95,7 @@ const OurServices = () => {
             <PrimaryButton 
             buttonlabel={"Learn More About Us"} 
             icon={<MoveRight />} 
-            link={"/contact-us/"}/>
+            link={"/about-us/"}/>
           </div>
           <div className="col col2 flex flex-row flex-wrap gap-5">
             <BlurbImageWidget 
