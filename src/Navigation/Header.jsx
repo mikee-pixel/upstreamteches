@@ -171,6 +171,9 @@ const Header = () => {
               <li className="menu-item">
                 <Link to="/contact-us" className="primary-tab">Contact Us</Link>
               </li>
+              <li className="menu-item">
+                <Link to="/portfolio" className="primary-tab">Portfolio</Link>
+              </li>
             </ul>
 
             <Link to={"tel:+639926414357"} className="btn primary-button">
@@ -283,6 +286,17 @@ const Header = () => {
                         className="primary-menu flex flex-row align-middle"
                       >
                         <Send /> Contact Us
+                      </NavLink>
+                    </li>
+                    <li
+                      className="menu-item"
+                      onClick={() => setMenuSlideOutStatus(false)}
+                    >
+                      <NavLink
+                        to="/portfolio/"
+                        className="primary-menu flex flex-row align-middle"
+                      >
+                        <BriefcaseBusiness /> Portfolio
                       </NavLink>
                     </li>
                   </ul>
