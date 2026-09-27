@@ -34,22 +34,25 @@ const Footer = () => {
             <li>
               <Link to="/contact-us">Contact Us</Link>
             </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
           </ul>
         </div>
         <div className="inner-con service-menu flex flex-col w-full md:w-[20%] gap-5">
           <h5>Services</h5>
           <ul>
             <li>
-              <Link to="/">Website Development</Link>
+              <Link to="/services/website-development">Website Development</Link>
             </li>
             <li>
-              <Link to="/">E-Commerce</Link>
+              <Link to="/services/e-commerce">E-Commerce</Link>
             </li>
             <li>
-              <Link to="/">SEO</Link>
+              <Link to="/services/seo">SEO</Link>
             </li>
             <li>
-              <Link to="/">Graphics</Link>
+              <Link to="/services/graphic-design">Graphics Design</Link>
             </li>
           </ul>
         </div>
