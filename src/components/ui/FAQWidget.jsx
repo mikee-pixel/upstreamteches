@@ -1,16 +1,17 @@
-import useAPIrequest from "../../customhooks/useAPIrequest";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import { CirclePlus, CircleMinus } from "lucide-react";
+import FaqData from "../../data/FaqData";
 
 const FAQWidget = () => {
-    // const {data, loading, errorMessage} = useAPIrequest("http://localhost:8000/faq");
-    const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/faq");
+    
     const [faqSelected, setFaqSelected] = useState(null);
 
+    //Reassign the FaqData
+    const faqData = FaqData;
 
     //Divide the FAQ List in two rows.
-    const faqLeft = data.filter((_, index) => index % 2 === 0);
-    const faqRight = data.filter((_, index) => index % 2 === 1);
+    const faqLeft = faqData.filter((_, index) => index % 2 === 0);
+    const faqRight = faqData.filter((_, index) => index % 2 === 1);
 
     //Handle FAQ Expand
     const handleExpand = (id) => {
@@ -19,7 +20,6 @@ const FAQWidget = () => {
 
     return (
         <div className="faq-container flex flex-col md:flex-row flex-wrap justify-center items-start p-5 gap-5">
-            {loading && <p>Loading...</p>}
             <div className="faq-col faq-left flex flex-col gap-5">
                 {faqLeft && faqLeft.map((faqItem, index) => (
                     <div className="faq-item flex flex-col p-5 gap-1" key={faqItem.id} onClick={() => handleExpand(faqItem.id)}>

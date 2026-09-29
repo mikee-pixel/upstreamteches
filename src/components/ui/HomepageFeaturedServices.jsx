@@ -1,18 +1,15 @@
-import useAPIrequest from "../../customhooks/useAPIrequest";
-import { useEffect } from "react";
-"lucide-react";
 import ServiceCard from "./ServiceCard";
-
+import ServicesData from "../../data/ServicesData";
 
 const HomepageFeaturedServices = () => {
 
-    //API Request from Express JS.
-    const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/services");
+    //ServicesData
+    const servicesData = Object.values(ServicesData);
+
 
     return (
         <div className="container-services flex flex-row flex-wrap justify-center align-middle gap-10 lg:gap-5">
-            {loading && <div>Loading...</div>}
-            {data && data.map((serviceItem, index) => (
+            {servicesData && servicesData.map((serviceItem, index) => (
                 <ServiceCard
                     is_best_selling={serviceItem.is_best_selling}
                     key={serviceItem.id}
