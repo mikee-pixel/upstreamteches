@@ -161,6 +161,7 @@ const Homepage = () => {
         preHeader={"Featured Projects"} 
         title={<h2 className="text-center">Real Websites. <span className="text-(--primary-color)">Real Growth.</span></h2>} 
         subHeader={"A look at some of the businesses we've helped grow through strategic design, development, and digital marketing solutions."}/>
+      
       <SectionLayout class_name="marketing-banner">
         <div
           className="row flex flex-col w-full mt-30"

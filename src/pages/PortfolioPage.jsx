@@ -1,19 +1,61 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PortfolioData from "../data/PortfolioData";
-import { SquareArrowOutUpRight, MoveRight, Blocks, Monitor, ShoppingCart, Search, PenTool, ArrowRight } from "lucide-react";
+import { SquareArrowOutUpRight, MoveRight, Blocks, Monitor, ShoppingCart, Search, PenTool, ArrowRight, Globe, Calendar, TowelRack, Tag, CircleArrowRight, X } from "lucide-react";
 import MarketingBanner from "../components/ui/MarketingBanner";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import SecondaryButton from "../components/ui/SecondaryButton";
-import {useEffect, useState, useRef} from "react";
+import {useCallback, useEffect, useState, useRef} from "react";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
+import BlurbImageWidget from "../components/ui/BlurbImageWidget";
+import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
+import useEmblaCarousel from "embla-carousel-react";
 
-const PortfolioPage = () => {
+
+
+const PortfolioPage = ({ images = [
+        {
+            src: "/images/portfolio/amk hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/launchpoint hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/lightspeed hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/ogs hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/satone hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/sbt hero.jpg",
+            alt: ""
+        },
+        {
+            src: "/images/portfolio/terralink hero.jpg",
+            alt: ""
+        },
+    ] }) => {
+
+
     const portfolioData = Object.values(PortfolioData);
     const [filteredProjectResult, setFilteredProjectResult] = useState(portfolioData);
-
-    //Project Filter
+    //Project filter
     const [activeFilter, setActiveFilter] = useState("all");
+    //Poup modal filter
+    const [activeSelectedProject, setActiveSelectedProject] = useState(null);
+    const activePopupModalData = Object.values(portfolioData.filter(projectItem => projectItem.id === activeSelectedProject));
+    //Portfolio Data Wrapper Container
+    const portfolioModalContainer = useRef(null);
+ 
 
+    //Filter the product display grid.
     useEffect(() => {  
         if(!portfolioData) return; 
 
@@ -23,14 +65,82 @@ const PortfolioPage = () => {
             const projectResult = portfolioData.filter(projectItem => projectItem.projectType === activeFilter);
             setFilteredProjectResult(projectResult);
         }
+    }, [activeFilter]);
 
-    }, [activeFilter])
+    //Portfolio Popup Carousel
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    //Close Popup Modal using ESC key.
+    useEffect(() => {
+        if(activeSelectedProject) {
+            window.addEventListener("keydown", (e) => {
+                if(e.key === "Escape") {
+                    setActiveSelectedProject(false);
+                }
+            })
+        }
+     }, [activeSelectedProject]);
+
+     //Close Popup Modal when click outside the modal.
+     useEffect(() => {
+        if(!activeSelectedProject) return; 
+
+        const handleClick = (e) => {
+            if(!e.target.closest(".portfolio-data-wrapper")) {
+                console.log("Clicked happen outside the container");
+                setActiveSelectedProject(false);
+            }
+        }
+
+        portfolioModalContainer.current.addEventListener("click", handleClick);
+
+        return () => portfolioModalContainer.current.removeEventListener("click", handleClick);
+     }, [activeSelectedProject])
+
+    //Portfolio Thumbnail Carousel
+    const [thumbsRef, thumbsApi] = useEmblaCarousel({
+        containScroll: "keepSnaps",
+        dragFree: true,
+    });
+
+    const scrollTo = useCallback(
+        (index) => {
+            if (!thumbsApi) return;
+
+            thumbsApi.scrollTo(index);
+            setSelectedIndex(index);
+        },
+        [thumbsApi]
+    );
+
+    const onThumbSelect = useCallback(() => {
+        if (!thumbsApi) return;
+
+        setSelectedIndex(thumbsApi.selectedScrollSnap());
+    }, [thumbsApi]);
+
+    useEffect(() => {
+        if (!thumbsApi) return;
+
+        onThumbSelect();
+
+        thumbsApi.on("select", onThumbSelect);
+        thumbsApi.on("reInit", onThumbSelect);
+
+        return () => {
+            thumbsApi.off("select", onThumbSelect);
+            thumbsApi.off("reInit", onThumbSelect);
+        };
+    }, [thumbsApi, onThumbSelect]);
+
+    if (!images.length) {
+        return null;
+    }
 
     //Entrance Animation
     const {targetElement:heroCol1, activeAnimation:heroCol1Animation} = useEntranceAnimation();
     const {targetElement:heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);
     const {targetElement:project, activeAnimation:projectAnimation} = useEntranceAnimation();
-
 
     return (
         <div id="portfolio-page">
@@ -124,20 +234,20 @@ const PortfolioPage = () => {
                         </button>
                     </div>
                 </div>
-                <div className="row row2 flex flex-row justify-between gap-10 pt-10">
+                <div className="row row2 flex flex-col justify-between gap-10 pt-10">
                     <div className="projects-container flex flex-row flex-wrap justify-center gap-10">
-
+                        {/* Project Grids */}
                         {filteredProjectResult?.length > 0 ? (
                             filteredProjectResult.map(projectItem => (
-                                <div className="project-item flex flex-col gap-5 w-full sm:w-[45%] lg:w-[30%] rounded-[10px] overflow-hidden border-[1px] border-(--border-color) cursor-pointer" key={projectItem.id}>
+                                <div className="project-item flex flex-col gap-0 w-full sm:w-[45%] lg:w-[30%] rounded-[10px] overflow-hidden border-[1px] border-(--border-color) cursor-pointer" onClick={() => setActiveSelectedProject(projectItem.id)} key={projectItem.id}>
                                     <div className="featured-image border-b border-(--border-color)">
                                         <img src={projectItem.featuredImage} alt={projectItem.featuredImageAlt} />
                                     </div>
-                                    <div className="project-details flex flex-col items-start gap-2 px-5 py-5">
+                                    <div className="project-details flex flex-col items-start gap-2 px-5 py-5 bg-(--color-white)">
                                         <p className="project-tag uppercase !text-(--primary-color) !font-[500] !text-[14px] tracking-[4px]">{projectItem.projectTag}</p>
                                         <h6>{projectItem.companyName}</h6>
                                         <p>{projectItem.projectSummary}</p>
-                                        <button className="project-btn flex gap-3 !font-[500] mt-[10px] !text-(--primary-color)">Learn More <MoveRight /></button>
+                                        <button className="project-btn flex gap-3 !font-[500] mt-[10px] !text-(--primary-color)" onClick={() => setActiveSelectedProject(projectItem.id)}>Learn More <MoveRight /></button>
                                     </div>
                                 
                                 </div>
@@ -151,6 +261,102 @@ const PortfolioPage = () => {
                             
                         )
                         }
+                    </div>
+
+                    {/* Project Popup Modal */}
+                    <div className={`portfolio-modal-container ${activeSelectedProject ? "popup-modal__active" : ""} w-full`} ref={portfolioModalContainer}>
+                        {activePopupModalData.map(projectData =>  (
+                            <div className="portfolio-data-wrapper flex flex-col sm:flex-row gap-10 w-[95vw] lg:w-[85vw] h-[96vh] sm:h-[60vh] lg:h-[95vh] overflow-y-auto sm:overflow-y-hidden" key={projectData.id}>
+                                <div className="portfolio-gallery w-full sm:w-[60%]">
+                                    {/* Active Image */}
+                                    <div className="portfolio-gallery__main">
+                                        <img
+                                            src={images[selectedIndex].src}
+                                            alt={images[selectedIndex].alt || ""}
+                                        />
+                                    </div>
+                                    {/* Thumbnail Carousel */}
+                                    <div className="portfolio-gallery__thumbs">
+                                        <div className="embla portfolio-gallery__viewport" ref={thumbsRef}>
+                                            <div className="embla__container">
+                                                {images.map((image, index) => (
+                                                    <div className="embla__slide portfolio-gallery__thumb" key={image.id ?? index}>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => scrollTo(index)}
+                                                            className={
+                                                                index === selectedIndex
+                                                                    ? "portfolio-gallery__thumb-btn active"
+                                                                    : "portfolio-gallery__thumb-btn"
+                                                            }>
+                                                            <img
+                                                                src={image.src}
+                                                                alt={image.alt || ""}
+                                                            />
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="portfolio-details flex flex-col gap-3 text-left py-5 w-full sm:w-[40%] h-auto sm:h-[55vh] lg:h-[85vh] overflow-y-visible sm:overflow-y-auto">
+                                    <p className="portfolio-pretag uppercase !text-[14px] !text-(--primary-color)">{projectData.projectTag}</p>
+                                    <h4 className="!text-[30px]">{projectData.companyName}</h4>
+                                    <p className="portfolio-summary !text-(--soft-body-text) !text-[18px]">
+                                        {projectData.projectSummary}
+                                    </p>
+
+                                    <div className="portfolio-widget flex flex-col gap-0 pb-3">
+                                        <BlurbImageWidget 
+                                            id={0} 
+                                            is_icon_type_img={false} 
+                                            featured_icon={<Globe />} 
+                                            title={<p className="!font-[600] !text-(--color-black)">Live Website</p>} 
+                                            excerpt={projectData.liveWebsite} 
+                                        />
+
+                                        <BlurbImageWidget 
+                                            id={0} 
+                                            is_icon_type_img={false} 
+                                            featured_icon={<Calendar />} 
+                                            title={<p className="!font-[600] !text-(--color-black)">Project Year</p>} 
+                                            excerpt={projectData.projectDate} 
+                                        />
+
+                                        <BlurbImageWidget 
+                                            id={0} 
+                                            is_icon_type_img={false} 
+                                            featured_icon={<TowelRack />} 
+                                            title={<p className="!font-[600] !text-(--color-black)">Services</p>} 
+                                            excerpt={projectData.projectPackage} 
+                                        />
+
+                                        <BlurbImageWidget 
+                                            id={0} 
+                                            is_icon_type_img={false} 
+                                            featured_icon={<Tag />} 
+                                            title={<p className="!font-[600] !text-(--color-black)">Project Tag</p>} 
+                                            excerpt={projectData.projectTag} 
+                                        />
+                                    </div>
+
+                                    <hr className="border-(--border-color) pb-3"/>
+                                    <div className="popup-modal-btn_container mb-5 flex">
+                                        <PrimaryLargeButton
+                                            buttonlabel={"View Live Website"} 
+                                            icon={<CircleArrowRight />} 
+                                            link={projectData.liveWebsite}
+                                        />
+                                    </div>
+                                    
+                                </div>
+                                <div className="popup-close__btn">
+                                    <button type="button" onClick={() => setActiveSelectedProject(null)}><X  className="w-[20px] h-[20px] cursor-pointer"/></button>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </SectionLayout>

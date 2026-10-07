@@ -11,6 +11,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/satone hero.jpg",
         featuredImageAlt: "Satone Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     amk: {
         id: 7, 
@@ -24,6 +25,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/amk hero.jpg",
         featuredImageAlt: "AMK Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     incantus: {
         id: 6, 
@@ -37,6 +39,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/incantus hero.jpg",
         featuredImageAlt: "Incantus Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     ogs: {
         id: 5, 
@@ -50,6 +53,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/ogs hero.jpg",
         featuredImageAlt: "OGS Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     launchPoint: {
         id: 4, 
@@ -63,6 +67,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/launchpoint hero.jpg",
         featuredImageAlt: "LaunchPoint Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     sbt: {
         id: 3, 
@@ -76,6 +81,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/sbt hero.jpg",
         featuredImageAlt: "SBT Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     lightSpeed: {
         id: 2, 
@@ -89,6 +95,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/lightspeed hero.jpg",
         featuredImageAlt: "LightSpeed Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     terralink: {
         id: 1, 
@@ -102,6 +109,7 @@ const PortfolioData = {
         projectOverview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         featuredImage: "/images/portfolio/terralink hero.jpg",
         featuredImageAlt: "Terralink Hero Image",
+        projectPackage: "Website Development, SEO, UI/UX Design, Custom Features",
     },
     
 }
