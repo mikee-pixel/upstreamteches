@@ -9,48 +9,19 @@ import useEntranceAnimation from "../customhooks/useEntranceAnimation";
 import BlurbImageWidget from "../components/ui/BlurbImageWidget";
 import PrimaryLargeButton from "../components/ui/PrimaryLargeButton";
 import useEmblaCarousel from "embla-carousel-react";
+import PortfolioPopupModal from "../components/ui/PortfolioPopupModal";
 
 
 
-const PortfolioPage = ({ images = [
-        {
-            src: "/images/portfolio/amk hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/launchpoint hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/lightspeed hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/ogs hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/satone hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/sbt hero.jpg",
-            alt: ""
-        },
-        {
-            src: "/images/portfolio/terralink hero.jpg",
-            alt: ""
-        },
-    ] }) => {
-
+const PortfolioPage = () => {
 
     const portfolioData = Object.values(PortfolioData);
     const [filteredProjectResult, setFilteredProjectResult] = useState(portfolioData);
     //Project filter
     const [activeFilter, setActiveFilter] = useState("all");
     //Poup modal filter
-    const [activeSelectedProject, setActiveSelectedProject] = useState(null);
-    const activePopupModalData = Object.values(portfolioData.filter(projectItem => projectItem.id === activeSelectedProject));
+    const [isPopupModalActive, setIsPopupModalActive] = useState(null);
+    const activePopupModalData = Object.values(portfolioData.filter(projectItem => projectItem.id === isPopupModalActive));
     //Portfolio Data Wrapper Container
     const portfolioModalContainer = useRef(null);
  
@@ -68,74 +39,78 @@ const PortfolioPage = ({ images = [
     }, [activeFilter]);
 
     //Portfolio Popup Carousel
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    // const [selectedIndex, setSelectedIndex] = useState(0);
+
+    //Portfolio Thumbnail Carousel
+    // const [thumbsRef, thumbsApi] = useEmblaCarousel({
+    //     containScroll: "keepSnaps",
+    //     dragFree: true,
+    // });
+
+    // const scrollTo = useCallback(
+    //     (index) => {
+    //         if (!thumbsApi) return;
+
+    //         thumbsApi.scrollTo(index);
+    //         setSelectedIndex(index);
+    //     },
+    //     [thumbsApi]
+    // );
+
+    // const onThumbSelect = useCallback(() => {
+    //     if (!thumbsApi) return;
+
+    //     setSelectedIndex(thumbsApi.selectedScrollSnap());
+    // }, [thumbsApi]);
+
+    // useEffect(() => {
+    //     if (!thumbsApi) return;
+
+    //     onThumbSelect();
+
+    //     thumbsApi.on("select", onThumbSelect);
+    //     thumbsApi.on("reInit", onThumbSelect);
+
+    //     return () => {
+    //         thumbsApi.off("select", onThumbSelect);
+    //         thumbsApi.off("reInit", onThumbSelect);
+    //     };
+    // }, [thumbsApi, onThumbSelect]);
+
+    // if (!images.length) {
+    //     return null;
+    // }
+
+    //Handle Close Button Popup Modal
+    const handleBtnCloseModal = (close) => {
+        setIsPopupModalActive(close);
+    }
 
     //Close Popup Modal using ESC key.
     useEffect(() => {
-        if(activeSelectedProject) {
+        if(isPopupModalActive) {
             window.addEventListener("keydown", (e) => {
                 if(e.key === "Escape") {
-                    setActiveSelectedProject(false);
+                    setIsPopupModalActive(false);
                 }
             })
         }
-     }, [activeSelectedProject]);
+     }, [isPopupModalActive]);
 
      //Close Popup Modal when click outside the modal.
      useEffect(() => {
-        if(!activeSelectedProject) return; 
+        if(!isPopupModalActive) return; 
 
         const handleClick = (e) => {
             if(!e.target.closest(".portfolio-data-wrapper")) {
-                console.log("Clicked happen outside the container");
-                setActiveSelectedProject(false);
+                setIsPopupModalActive(false);
             }
         }
 
         portfolioModalContainer.current.addEventListener("click", handleClick);
 
         return () => portfolioModalContainer.current.removeEventListener("click", handleClick);
-     }, [activeSelectedProject])
-
-    //Portfolio Thumbnail Carousel
-    const [thumbsRef, thumbsApi] = useEmblaCarousel({
-        containScroll: "keepSnaps",
-        dragFree: true,
-    });
-
-    const scrollTo = useCallback(
-        (index) => {
-            if (!thumbsApi) return;
-
-            thumbsApi.scrollTo(index);
-            setSelectedIndex(index);
-        },
-        [thumbsApi]
-    );
-
-    const onThumbSelect = useCallback(() => {
-        if (!thumbsApi) return;
-
-        setSelectedIndex(thumbsApi.selectedScrollSnap());
-    }, [thumbsApi]);
-
-    useEffect(() => {
-        if (!thumbsApi) return;
-
-        onThumbSelect();
-
-        thumbsApi.on("select", onThumbSelect);
-        thumbsApi.on("reInit", onThumbSelect);
-
-        return () => {
-            thumbsApi.off("select", onThumbSelect);
-            thumbsApi.off("reInit", onThumbSelect);
-        };
-    }, [thumbsApi, onThumbSelect]);
-
-    if (!images.length) {
-        return null;
-    }
+     }, [isPopupModalActive])
 
     //Entrance Animation
     const {targetElement:heroCol1, activeAnimation:heroCol1Animation} = useEntranceAnimation();
@@ -239,7 +214,7 @@ const PortfolioPage = ({ images = [
                         {/* Project Grids */}
                         {filteredProjectResult?.length > 0 ? (
                             filteredProjectResult.map(projectItem => (
-                                <div className="project-item flex flex-col gap-0 w-full sm:w-[45%] lg:w-[30%] rounded-[10px] overflow-hidden border-[1px] border-(--border-color) cursor-pointer" onClick={() => setActiveSelectedProject(projectItem.id)} key={projectItem.id}>
+                                <div className="project-item flex flex-col gap-0 w-full sm:w-[45%] lg:w-[30%] rounded-[10px] overflow-hidden border-[1px] border-(--border-color) cursor-pointer" onClick={() => setIsPopupModalActive(projectItem.id)} key={projectItem.id}>
                                     <div className="featured-image border-b border-(--border-color)">
                                         <img src={projectItem.featuredImage} alt={projectItem.featuredImageAlt} />
                                     </div>
@@ -247,7 +222,7 @@ const PortfolioPage = ({ images = [
                                         <p className="project-tag uppercase !text-(--primary-color) !font-[500] !text-[14px] tracking-[4px]">{projectItem.projectTag}</p>
                                         <h6>{projectItem.companyName}</h6>
                                         <p>{projectItem.projectSummary}</p>
-                                        <button className="project-btn flex gap-3 !font-[500] mt-[10px] !text-(--primary-color)" onClick={() => setActiveSelectedProject(projectItem.id)}>Learn More <MoveRight /></button>
+                                        <button className="project-btn flex gap-3 !font-[500] mt-[10px] !text-(--primary-color)" onClick={() => setIsPopupModalActive(projectItem.id)}>Learn More <MoveRight /></button>
                                     </div>
                                 
                                 </div>
@@ -264,18 +239,21 @@ const PortfolioPage = ({ images = [
                     </div>
 
                     {/* Project Popup Modal */}
-                    <div className={`portfolio-modal-container ${activeSelectedProject ? "popup-modal__active" : ""} w-full`} ref={portfolioModalContainer}>
+                    <PortfolioPopupModal  isPopupModalActive={isPopupModalActive} portfolioModalContainer={portfolioModalContainer} activePopupModalData={activePopupModalData} HandleBtnCloseModal={handleBtnCloseModal}/>
+
+
+                    {/* <div className={`portfolio-modal-container ${isPopupModalActive ? "popup-modal__active" : ""} w-full`} ref={portfolioModalContainer}>
                         {activePopupModalData.map(projectData =>  (
                             <div className="portfolio-data-wrapper flex flex-col sm:flex-row gap-10 w-[95vw] lg:w-[85vw] h-[96vh] sm:h-[60vh] lg:h-[95vh] overflow-y-auto sm:overflow-y-hidden" key={projectData.id}>
                                 <div className="portfolio-gallery w-full sm:w-[60%]">
-                                    {/* Active Image */}
+                                    { Active Image }
                                     <div className="portfolio-gallery__main">
                                         <img
                                             src={images[selectedIndex].src}
                                             alt={images[selectedIndex].alt || ""}
                                         />
                                     </div>
-                                    {/* Thumbnail Carousel */}
+                                    { Thumbnail Carousel }
                                     <div className="portfolio-gallery__thumbs">
                                         <div className="embla portfolio-gallery__viewport" ref={thumbsRef}>
                                             <div className="embla__container">
@@ -353,11 +331,11 @@ const PortfolioPage = ({ images = [
                                     
                                 </div>
                                 <div className="popup-close__btn">
-                                    <button type="button" onClick={() => setActiveSelectedProject(null)}><X  className="w-[20px] h-[20px] cursor-pointer"/></button>
+                                    <button type="button" onClick={() => setIsPopupModalActive(null)}><X  className="w-[20px] h-[20px] cursor-pointer"/></button>
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </SectionLayout>
             <MarketingBanner 

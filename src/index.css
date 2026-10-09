@@ -2921,6 +2921,12 @@ input:-webkit-autofill:active {
   font-size: 17px;
 }
 
+@media screen and (max-width: 640px) {
+  #portfolio-page .projects .row2 .portfolio-modal-container .portfolio-data-wrapper {
+    padding: 20px 20px;
+  }
+}
+
 /*Portfolio Carousel*/
 .portfolio-gallery {
     /* width: 100%; */
