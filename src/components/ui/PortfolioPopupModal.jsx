@@ -17,8 +17,6 @@ const PortfolioPopupModal = ({
   activePopupModalData,
   HandleBtnCloseModal}) => {
 
-  console.log(activePopupModalData[0]);
-
   //Portfolio Popup Carousel
   const [selectedIndex, setSelectedIndex] = useState(0);
 

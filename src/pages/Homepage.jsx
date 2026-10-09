@@ -158,7 +158,7 @@ const Homepage = () => {
       </SectionLayout>
 
       <Portfolio 
-        preHeader={"Featured Projects"} 
+        preHeader={"Recent Projects"} 
         title={<h2 className="text-center">Real Websites. <span className="text-(--primary-color)">Real Growth.</span></h2>} 
         subHeader={"A look at some of the businesses we've helped grow through strategic design, development, and digital marketing solutions."}/>
       
