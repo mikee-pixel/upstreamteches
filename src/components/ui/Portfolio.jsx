@@ -69,7 +69,7 @@ const Portfolio = ({preHeader, title, subHeader}) => {
                                         <img src={projectItem.featuredImage} alt={projectItem.featuredImageAlt} />
                                         
                                         </div>
-                                        <div className="project-details flex flex-col items-start gap-2 p-[20px]">
+                                        <div className="project-details flex flex-col items-start gap-2 p-[20px] bg-(--color-white)">
                                         <p className="project-tag uppercase !text-[13px] !text-(--primary-color) !font-[500] tracking-[4px]">{projectItem.projectTag}</p>
                                         <h6>{projectItem.companyName}</h6>
                                         <p>{projectItem.projectSummary}</p>
