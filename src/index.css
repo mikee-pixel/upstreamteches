@@ -953,12 +953,12 @@ input:-webkit-autofill:active {
 }
 
 /*Portfolio Image*/
-.portfolio-gallery__main {
+.portfolio-modal-container .portfolio-gallery__main {
     overflow: hidden;
     border-radius: 12px;
 }
 
-.portfolio-gallery__main img {
+.portfolio-modal-container .portfolio-gallery__main img {
     display: block;
     width: 100%;
     height: auto;
@@ -966,23 +966,23 @@ input:-webkit-autofill:active {
 
 
 /* Thumbnail carousel */
-.portfolio-gallery__viewport {
+.portfolio-modal-container .portfolio-gallery__viewport {
     overflow: hidden;
     width: 100%;
     margin-top: 15px;
 }
 
-.portfolio-gallery__viewport .embla__container {
+.portfolio-modal-container .portfolio-gallery__viewport .embla__container {
     display: flex;
     gap: 10px;
 }
 
-.portfolio-gallery__thumb {
+.portfolio-modal-container .portfolio-gallery__thumb {
     flex: 0 0 20%;
     min-width: 0;
 }
 
-.portfolio-gallery__thumb-btn {
+.portfolio-modal-container .portfolio-gallery__thumb-btn {
     display: block;
     width: 100%;
     padding: 0;
@@ -996,14 +996,14 @@ input:-webkit-autofill:active {
     overflow: hidden;
 }
 
-.portfolio-gallery__thumb-btn img {
+.portfolio-modal-container .portfolio-gallery__thumb-btn img {
     display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
-.portfolio-gallery__thumb-btn.active {
+.portfolio-modal-container .portfolio-gallery__thumb-btn.active {
     border-color: var(--primary-color);
 }
 
