@@ -220,13 +220,10 @@ const Header = () => {
                           </div>
                           <button className="w-7 sm:w-10 h-7 sm:h-10 stroke-white" onClick={() => {setIsServiceMenuDropdow(prev => !prev)}}> 
                              <ChevronDown />
-                            {/* {isServiceMenuDropdown ? <ChevronUp /> : <ChevronDown />} */}
                           </button>
                         </div>
                       </NavLink>
                         
-                    
-    
                       {/*Mobile Submenu */}
                       <div className={`submenu-container ${isServiceMenuDropdown ? 'active' : ''}`}>
                         <ul>
@@ -237,7 +234,6 @@ const Header = () => {
                                 is_icon_type_img={false}
                                 featured_icon={<CodeXml />}
                                 title={"Website Development"}
-                                // excerpt={"Custom, responsive websites for your business."}
                               />
                             </NavLink>
                           </li>
@@ -248,7 +244,6 @@ const Header = () => {
                                 is_icon_type_img={false}
                                 featured_icon={<ShoppingBasket />}
                                 title={"E-Commerce"}
-                                // excerpt={"Sell online with a secure and scalable store."}
                               />
                             </NavLink>
                           </li>
@@ -259,7 +254,6 @@ const Header = () => {
                                 is_icon_type_img={false}
                                 featured_icon={<CodeXml />}
                                 title={"SEO"}
-                                // excerpt={"Rank higher and get more organic traffic."}
                               />
                             </NavLink>
                           </li>
@@ -270,7 +264,6 @@ const Header = () => {
                                 is_icon_type_img={false}
                                 featured_icon={<PenTool />}
                                 title={"Graphics Design"}
-                                // excerpt={"Eye-catching visuals for your brand."}
                               />
                             </NavLink>
                           </li>
@@ -331,7 +324,7 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="maps.app.goo.gl/bdZ7T3caRjAhVsuk7" target="_blank">
+                      <a href="https://maps.app.goo.gl/aBsvSs919B8X9sG28" target="_blank">
                         <p className="flex flex-row items-center gap-5 ">
                           <MapPin /> Bacoor, Cavite, 4102
                         </p>

@@ -1,17 +1,17 @@
 import SectionLayout from "../components/sections/SectionLayout";
 import PrimaryButton from "../components/ui/PrimaryButton";
-import { Rocket, MoveRight, PhoneOutgoing, Phone, PieChart, Trophy, Puzzle, HeartHandshake } from "lucide-react";
+import { Rocket, MoveRight, PhoneOutgoing, PieChart, Trophy, Puzzle, HeartHandshake } from "lucide-react";
 import SecondaryButton from "../components/ui/SecondaryButton";
 import ClientLogoCaraousel from "../components/ui/ClientsLogoCarousel";
-import useAPIrequest from "../customhooks/useAPIrequest";
 import BlurbImageWidget from "../components/ui/BlurbImageWidget";
 import MarketingBanner from "../components/ui/MarketingBanner";
 import useEntranceAnimation from "../customhooks/useEntranceAnimation";
+import ServicesData from "../data/ServicesData";
 
 const OurServices = () => {
 
-  //Service API Request
-  const {data, loading, errorMessage} = useAPIrequest("https://upstreamteches-backend.onrender.com/services");
+  //ServicesData
+  const serviceData = Object.values(ServicesData);
 
   const {targetElement: heroCol1, activeAnimation: heroCol1Animation} = useEntranceAnimation();
   const {targetElement: heroCol2, activeAnimation: heroCol2Animation} = useEntranceAnimation(300);
@@ -67,8 +67,7 @@ const OurServices = () => {
                 <p className="sub-heading">Comprehensive digital marketing solutions tailored to your business goals.</p>
 
                 <div className="service-list-container flex lg:flex-row max-lg:flex-wrap justify-center gap-10 p-5">
-                  {loading && <p>Loading...</p>}
-                  {data && data.map((serviceItem, index) => (
+                  {serviceData && serviceData.map((serviceItem, index) => (
                         <BlurbImageWidget 
                           key={serviceItem.id}
                           id={index}

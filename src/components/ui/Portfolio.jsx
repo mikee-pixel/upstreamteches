@@ -63,8 +63,8 @@ const Portfolio = ({preHeader, title, subHeader}) => {
                     <div className="embla__viewport" ref={emblaRef}>
                         <div className="embla__container">
                             {portfolioData && portfolioData.filter(projectItem => projectItem.featuredPortfolio === true).map(projectItem => (
-                                <div className="embla__slide project-item flex flex-col gap-5 cursor-pointer bg-(--color-white)" key={projectItem.id} onClick={() => setIsPopupModalActive(projectItem.id)}>
-                                    <div className="project-content-container rounded-[20px] border-[1px] border-(--border-color) overflow-hidden h-[100%]">
+                                <div className="embla__slide project-item flex flex-col gap-5 cursor-pointer" key={projectItem.id} onClick={() => setIsPopupModalActive(projectItem.id)}>
+                                    <div className="project-content-container rounded-[20px] border-[1px] border-(--border-color) overflow-hidden h-[100%] bg-(--color-white)">
                                         <div className="featured-image">
                                         <img src={projectItem.featuredImage} alt={projectItem.featuredImageAlt} />
                                         

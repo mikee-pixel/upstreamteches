@@ -852,9 +852,9 @@ input:-webkit-autofill:active {
   height: 55px;
 }
 
-.faq-container .faq-item .faq-question svg {
+.faq-container .faq-item svg {
   stroke: var(--primary-color);
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .faq-container .faq-item .faq-answer {
@@ -1362,7 +1362,7 @@ input:-webkit-autofill:active {
   margin-left: 30px;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 1s ease-in-out;
+  transition: grid-template-rows 0.5s ease-in-out;
 }
 
 .header-menu .mobile-header-menu-container .submenu-container.active {
@@ -1604,7 +1604,7 @@ input:-webkit-autofill:active {
 }
 
 #homepage .core-services .container-services .blurb-item .service-btn svg {
-  transform: rotate(-45deg);
+  /* transform: rotate(-45deg); */
 }
 
 #homepage
@@ -1618,15 +1618,15 @@ input:-webkit-autofill:active {
 
 @keyframes arrowupright-animation {
   0% {
-    transform: rotate(-45deg) translateX(0%);
+    transform: translateX(0%);
   }
 
   50% {
-    transform: rotate(0deg) translateX(25%);
+    transform: translateX(25%);
   }
 
   100% {
-    transform: rotate(0deg) translateX(50%);
+    transform: translateX(50%);
   }
 }
 
@@ -1638,6 +1638,10 @@ input:-webkit-autofill:active {
     border-radius: 20px;
     width: fit-content;
     margin-top: 20px;
+  }
+
+  #homepage .core-services .container-services .blurb-item:hover {
+    scale: 1;
   }
 
   #homepage .core-services .container-services .blurb-item hr {
@@ -2425,6 +2429,10 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 1024px) {
   #our-services .what-we-do .row .service-list-container .blurb-item {
     width: 45%;
+  }
+
+  #our-services .what-we-do .row .service-list-container .blurb-item:hover {
+    scale: 1;
   }
 }
 

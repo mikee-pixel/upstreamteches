@@ -8,10 +8,12 @@ const ServiceCard = ({is_best_selling, index, featured_icon, title, excerpt, bul
     const {targetElement, activeAnimation} = useEntranceAnimation(index*200);
 
   return (
+    
     <div
-      className={`blurb-item flex flex-col justify-between items-center sm:items-start gap-3 w-[90%] sm:w-[45%] lg:w-[23%] ${is_best_selling ? "highlighted-blurb-item" : ""} ${activeAnimation ? "fade-in--active" : "fade-in--disabled"}`}
+      className={`blurb-item w-[90%] sm:w-[45%] lg:w-[23%] ${is_best_selling ? "highlighted-blurb-item" : ""} ${activeAnimation ? "fade-in--active" : "fade-in--disabled"}`}
       ref={targetElement}
     >
+      <Link to={button_link} className="flex flex-col justify-between items-center sm:items-start gap-3">
       <div className="blurb-contents flex flex-col items-center sm:items-start gap-3">
         <img src={featured_icon} alt="" />
         <h4>{title}</h4>
@@ -30,10 +32,11 @@ const ServiceCard = ({is_best_selling, index, featured_icon, title, excerpt, bul
       </div>
       <Link
         to={button_link}
-        className="service-btn small-button flex flex-row justify-center sm:justify-start gap-2"
+        className="service-btn flex flex-row justify-center sm:justify-start items-center gap-2 pt-2"
       >
         {button_label}
         <MoveRight size={18} />
+      </Link>
       </Link>
     </div>
   );
